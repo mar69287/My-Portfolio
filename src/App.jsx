@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 function App() {
 
   return (
-    <Box className='container' h={'100vh'} w={'100vw'}>
+    <Box className='container' h={'100vh'} >
       <Hero />
       <About />
       <Projects />

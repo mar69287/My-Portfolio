@@ -5,8 +5,9 @@ const About = () => {
   return (
     <Box
         h="100vh"
-        w="100vw"
         bgColor={"blue.300"}
+        scrollSnapAlign={'center'}
+        scrollBehavior={'smooth'}
     >
 
     </Box>

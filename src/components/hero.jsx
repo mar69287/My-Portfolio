@@ -7,13 +7,14 @@ const Hero = () => {
   return (
     <Box
       h="100vh"
-      w="100vw"
       backgroundImage={`url(${heroBackground})`}
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
       display="flex"
       alignItems="center"
       justifyContent="center"
+      scrollSnapAlign={'center'}
+      scrollBehavior={'smooth'}
     >
       <VStack>
         <Heading size={'4xl'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>

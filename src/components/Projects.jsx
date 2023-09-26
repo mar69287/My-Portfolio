@@ -5,8 +5,9 @@ const Projects = () => {
   return (
     <Box
         h="100vh"
-        w="100vw"
         bgColor={"blue.600"}
+        scrollSnapAlign={'center'}
+        scrollBehavior={'smooth'}
     >
 
     </Box>
