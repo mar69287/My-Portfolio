@@ -4,7 +4,6 @@ import Hero from './components/hero'
 import About from './components/About'
 import Projects from './components/Projects'
 import Navbar from './components/Navbar'
-import { useState, useEffect, useRef } from 'react'
 import Contact from './components/Contact'
 
 function App() {
