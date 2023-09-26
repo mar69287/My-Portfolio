@@ -1,6 +1,7 @@
 import { Box, Grid, GridItem, HStack, Image, VStack, Link } from "@chakra-ui/react";
 import profile from "../assets/portfolio.png"
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
+import resume from '../assets/Marco-Software-Resume.pdf'
 
 const About = () => {
   return (
@@ -26,8 +27,8 @@ const About = () => {
                 color={'#616161'} 
                 fontSize={'1.9rem'}
                 _hover={{
-                  color: "#00989D", // Change color on hover
-                  transition: "color 0.3s ease", // Add a transition effect
+                  color: "#00989D", 
+                  transition: "color 0.3s ease",
                 }}
               >
                 <AiFillGithub />
@@ -38,8 +39,8 @@ const About = () => {
                 color={'#616161'} 
                 fontSize={'1.9rem'}
                 _hover={{
-                  color: "#00989D", // Change color on hover
-                  transition: "color 0.3s ease", // Add a transition effect
+                  color: "#00989D", 
+                  transition: "color 0.3s ease", 
                 }}
               >
                 <AiFillLinkedin />
@@ -50,13 +51,29 @@ const About = () => {
                 color={'#616161'} 
                 fontSize={'1.9rem'}
                 _hover={{
-                  color: "#00989D", // Change color on hover
-                  transition: "color 0.3s ease", // Add a transition effect
+                  color: "#00989D", 
+                  transition: "color 0.3s ease", 
                 }}
               >
                 <AiOutlineMail />
               </Link>
             </HStack>
+            <Link 
+                href={resume}
+                isExternal 
+                color={'rgb(33, 36, 46)'} 
+                fontSize={'1.5rem'}
+                border={'2px solid #e31b6d'}
+                px={'1.4rem'}
+                py={'.1rem'}
+                _hover={{
+                  color: "#fff", 
+                  backgroundColor: '#e31b6d',
+                  transition: "all .6s ease", 
+                }}
+              >
+                RESUME
+              </Link>
           </VStack>
         </GridItem>
         <GridItem>
