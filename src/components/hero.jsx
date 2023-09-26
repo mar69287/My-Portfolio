@@ -45,7 +45,7 @@ const Hero = () => {
             <span className="letter">e</span>
             <span className="letter">r</span>
             <Text display={'inline-block'} mr={2}></Text>
-            <span className="letter">|</span>
+            <span >|</span>
             <Text display={'inline-block'} mr={2}></Text>
             <span className="letter">S</span>
             <span className="letter">o</span>
@@ -65,7 +65,7 @@ const Hero = () => {
             <span className="letter">e</span>
             <span className="letter">r</span>
             <Text display={'inline-block'} mr={2}></Text>
-            <span className="letter">|</span>
+            <span>|</span>
             <Text display={'inline-block'} mr={2}></Text>
             <span className="letter">S</span>
             <span className="letter">p</span>
