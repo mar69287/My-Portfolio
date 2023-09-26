@@ -6,8 +6,7 @@ const Projects = () => {
     <Box
         h="100vh"
         bgColor={"blue.600"}
-        scrollSnapAlign={'center'}
-        scrollBehavior={'smooth'}
+        id="projects"
     >
 
     </Box>

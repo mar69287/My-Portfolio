@@ -4,9 +4,8 @@ const Contact = () => {
   return (
     <Box
         h="100vh"
-        bgColor={"blue.600"}
-        scrollSnapAlign={'center'}
-        scrollBehavior={'smooth'}
+        bgColor={"blue.800"}
+        id="contact"
     >
 
     </Box>

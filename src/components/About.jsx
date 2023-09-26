@@ -6,8 +6,7 @@ const About = () => {
     <Box
         h="100vh"
         bgColor={"blue.300"}
-        scrollSnapAlign={'center'}
-        scrollBehavior={'smooth'}
+        id="about"
     >
 
     </Box>

@@ -13,8 +13,7 @@ const Hero = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      scrollSnapAlign={'center'}
-      scrollBehavior={'smooth'}
+      id="hero"
     >
       <VStack>
         <Heading size={'4xl'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
