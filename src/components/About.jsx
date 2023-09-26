@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, HStack, Image, VStack, Link } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Image, VStack, Link, Text } from "@chakra-ui/react";
 import profile from "../assets/portfolio.png"
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
 import resume from '../assets/Marco-Software-Resume.pdf'
@@ -14,7 +14,7 @@ const About = () => {
         mx={20}
       >
         <GridItem>
-          <VStack borderRight={'2px solid #ddd'} pt={5}>
+          <VStack borderRight={'2px solid #ddd'} pt={10}>
             <Image 
               src={profile}
               w={'320px'}
@@ -76,8 +76,20 @@ const About = () => {
               </Link>
           </VStack>
         </GridItem>
-        <GridItem>
-
+        <GridItem pl={20} pr={10} py={'3.5rem'}>
+            <VStack justifyContent={'center'} alignItems={'flex-start'}>
+                <Text color={'#b9b9b9'} fontSize={"xl"} fontWeight={'medium'}>
+                  ABOUT ME
+                </Text>
+                <Text color={'rgb(33, 36, 46)'} fontSize={"2xl"} mt={3}>
+                  I am a Mechanical Engineer turned Developer who loves exploring the balance between curiosity, 
+                  practicality, and creativity. These three pillars drive me to discover valuable insights, 
+                  rethink problems, and create innovative solutions. 
+                </Text>
+                <Text color={'rgb(33, 36, 46)'} fontSize={"2xl"} mt={1}>
+                Outside of programming, I love the outdoors. From camping, to playing sports, to just taking a drive with my beautiful dog. Favorite sports team is FC Barcelona. Visca Barca!
+                </Text>
+            </VStack> 
         </GridItem>
       </Grid>
     </Box>
