@@ -1,0 +1,9 @@
+.rotate {
+    transform: rotate(90deg);
+    white-space: nowrap;
+    color: #b9b9b9;
+    opacity: .6;
+    padding: 1rem;
+    position: absolute;
+}
+  

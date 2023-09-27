@@ -2,7 +2,7 @@ import './App.css'
 import { Box } from '@chakra-ui/react'
 import Hero from './components/hero'
 import About from './components/About'
-import Projects from './components/Projects'
+import Projects from './components/Projects/Projects'
 import Navbar from './components/Navbar'
 import Contact from './components/Contact'
 
