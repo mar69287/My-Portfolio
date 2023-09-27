@@ -10,13 +10,14 @@ const About = () => {
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
 
   return (
-    <Box minH="100vh" bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} m='0 auto'>
+    <Box bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} m='0 auto'>
       <Grid
         templateColumns={{ base: "1fr", lg: "repeat(6, 1fr)" }} 
         gap={0} 
         borderTop={isLargeScreen ? '2px solid #ddd' : 'none'}
         mt={20}
         mx={20}
+        mb={20}
       >
         <GridItem colSpan={{ base: 1, lg: 2 }} borderRight={isLargeScreen ? '2px solid #ddd' : 'none'}>
           <VStack pt={10} px={10} pb={5}>
