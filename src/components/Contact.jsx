@@ -2,8 +2,36 @@ import { Box, Button, FormControl, Grid, GridItem, Heading, Input, Text, Textare
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { MdArrowForward } from 'react-icons/md';
 import resume from '../assets/Marco-Software-Resume.pdf'
+import emailjs from 'emailjs-com';
+import { useRef, useState } from "react";
 
 const Contact = () => {
+  const form = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    emailjs.send('service_7497a0m', 'template_ji08oq7', templateParams, 'LpSuZxGcnUytPiwHX')
+      .then((response) => {
+        console.log('Email sent:', response);
+      })
+      .catch((error) => {
+        console.error('Email error:', error);
+      });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <Box
         bgColor={"#252934"}
@@ -71,33 +99,35 @@ const Contact = () => {
                 </HStack>
             </Link>
         </GridItem>
-        <VStack  h="100%" alignItems={'flex-end'} justifyContent={'center'}>
+        <form ref={form} onSubmit={sendEmail}>
+          <VStack w={'100%'}  h="100%" alignItems={'flex-end'} justifyContent={'center'}>
+            <FormControl>
+              <Input type="text" value={name} onChange={(e) => setName(e.target.value)} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}  placeholder="Your Name" _placeholder={{ color: '#b9b9b9' }}/>
+            </FormControl>
 
-          <FormControl>
-            <Input type="text" borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}  placeholder="Your Name" _placeholder={{ color: '#b9b9b9' }}/>
-          </FormControl>
+            <FormControl mt={6}>
+              <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email" _placeholder={{ color: '#b9b9b9' }} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
+            </FormControl>
 
-          <FormControl mt={6}>
-            <Input type="email" placeholder="Your Email" _placeholder={{ color: '#b9b9b9' }} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
-          </FormControl>
+            <FormControl mt={8}>
+              <Textarea placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} _placeholder={{ color: '#b9b9b9' }} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
+            </FormControl>
 
-          <FormControl mt={8}>
-            <Textarea placeholder="Message" _placeholder={{ color: '#b9b9b9' }} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
-          </FormControl>
-
-          <Button
-            mt={4}
-            bg={'#252934'}
-            color={'#fff'}
-            borderRadius={0}
-            _hover={{ bg: "#00989D", border: "2px solid #00989D", transition: "all .5s ease", }}
-            border={'2px solid #fff'}
-            px={'1.6rem'}
-            py={'1.2rem'}
-          >
-            SUBMIT
-          </Button>
-        </VStack>
+            <Button
+              mt={4}
+              bg={'#252934'}
+              color={'#fff'}
+              borderRadius={0}
+              _hover={{ bg: "#00989D", border: "2px solid #00989D", transition: "all .5s ease", }}
+              border={'2px solid #fff'}
+              px={'1.6rem'}
+              py={'1.2rem'}
+              type="submit"
+            >
+              SUBMIT
+            </Button>
+          </VStack>
+        </form>
       </Grid>
     </Box>
   )
