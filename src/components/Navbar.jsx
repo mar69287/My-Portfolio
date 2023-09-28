@@ -8,7 +8,7 @@ import './Navbar.css'
 const Navbar = () => {
   
   return (
-    <HStack as={'nav'} gap={2} bgColor={'rgba(0, 0, 0, 0.3)'} w={'max-content'} zIndex={3} position={'fixed'} left={'50%'} transform={'translateX(-50%)'} bottom={'2rem'} p={".7rem 1.7rem"} borderRadius={50} backdropBlur={'15px'}>
+    <HStack as={'nav'} gap={2} bgColor={'rgba(0, 0, 0, 0.3)'} w={'max-content'} zIndex={6} position={'fixed'} left={'50%'} transform={'translateX(-50%)'} bottom={'2rem'} p={".7rem 1.7rem"} borderRadius={50} backdropBlur={'15px'}>
         <Link activeClass='active' to='hero' spy={true} smooth={true} offset={-70} duration={500} className='nav-icons'>
                 <AiOutlineHome />
         </Link>

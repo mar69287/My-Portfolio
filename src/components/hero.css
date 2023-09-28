@@ -13,7 +13,8 @@ color: #e31b6d;
     transition: transform 0.3s ease;
 }
 
-.button:hover .arrow-icon {
+.button:hover .arrow-icon,
+.btn:hover .arrow-icon {
     transform: translateX(2px);
 }
 
@@ -34,6 +35,10 @@ color: #e31b6d;
 
 .style1 {
     color: #fff;
+}
+
+.style2 {
+    color: black;
 }
 
 .style1::after, 

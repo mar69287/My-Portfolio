@@ -1,5 +1,6 @@
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import './Projects.css';
+import ProjectsGrid from "../ProjectsGrid/ProjectsGrid";
 
 const Projects = () => {
 
@@ -10,30 +11,33 @@ const Projects = () => {
       id="projects"
       as="section"
       py={20}
+      px={{base: '5', lg: '0'}}
     >
       <Grid
-        templateColumns={{ base: "1fr 5fr", lg: "repeat(6, 1fr)" }}
+        templateColumns={{ base: "1fr", md: "1fr 5fr", lg: "repeat(6, 1fr)" }}
         minH={'100vh'}
         position="relative"
+        width={{xl: '100%', '2xl': '1400px'}} m='0 auto'
       >
         <GridItem colSpan={1} h="100%" position={'relative'}>
-          {/* <Box
-            position={'relative'}
-          > */}
             <Heading
               size={{base:'xl', md:'2xl', lg:'3xl'}}
               className="rotate"
-              left={['-5rem', '-5rem', '-8rem', '-6rem']}
-              top={['3rem', '5rem', '7rem', '10rem']}
-              // sx={{
-              //   '@media screen and (max-width: 48em)': {
-              //     transform: 'none !important',
-              //   },
-              // }}
+              left={['1rem', '-5rem', '-8rem', '-6rem']}
+              top={['0rem', '5rem', '7rem', '10rem']}
+              sx={{
+                '@media screen and (max-width: 768px)': {
+                  transform: 'none !important',
+                  position: 'static',
+                  padding: '0'
+                },
+              }}
             >
               Latest Projects
             </Heading>
-          {/* </Box> */}
+        </GridItem>
+        <GridItem h={'100%'} colSpan={5} mr={8}>
+            <ProjectsGrid />
         </GridItem>
       </Grid>
     </Box>
