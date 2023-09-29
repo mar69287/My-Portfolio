@@ -18,6 +18,7 @@ const Projects = () => {
         minH={'100vh'}
         position="relative"
         width={{xl: '100%', '2xl': '1400px'}} m='0 auto'
+        pr={{base: 0, lg: 5}}
       >
         <GridItem colSpan={{base: 2, md: 1}} h="100%" position={'relative'}>
             <Heading
@@ -39,7 +40,7 @@ const Projects = () => {
               Latest Projects
             </Heading>
         </GridItem>
-        <GridItem h={'100%'} colSpan={5} mr={8}>
+        <GridItem h={'100%'} colSpan={5} mr={{base:0, md: 0}}> 
             <ProjectsGrid />
         </GridItem>
       </Grid>
