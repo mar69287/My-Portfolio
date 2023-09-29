@@ -19,17 +19,20 @@ const Projects = () => {
         position="relative"
         width={{xl: '100%', '2xl': '1400px'}} m='0 auto'
       >
-        <GridItem colSpan={1} h="100%" position={'relative'}>
+        <GridItem colSpan={{base: 2, md: 1}} h="100%" position={'relative'}>
             <Heading
-              size={{base:'xl', md:'2xl', lg:'3xl'}}
+              size={{base:'2xl', sm:'3xl', md:'2xl', lg:'3xl'}}
               className="rotate"
               left={['1rem', '-5rem', '-8rem', '-6rem']}
-              top={['0rem', '5rem', '7rem', '10rem']}
+              top={['0rem', '8rem', '10rem']}
               sx={{
-                '@media screen and (max-width: 768px)': {
+                '@media screen and (max-width: 991px)': {
                   transform: 'none !important',
                   position: 'static',
-                  padding: '0'
+                  padding: '0',
+                  width: '100%',
+                  textAlign: 'center',
+                  marginBottom: '2.5rem'
                 },
               }}
             >
