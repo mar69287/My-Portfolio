@@ -63,7 +63,7 @@ const Contact = ({ setIsContactVisible }) => {
       <Grid
         templateColumns={{ base: "1fr", md: "1fr 2fr" }}
         width={{xl: '100%', '2xl': '1400px'}} m='0 auto'
-        px={10}
+        px={{base: 0, lg: 10}}
         color={'#fff'}
         gap={10}
       >
