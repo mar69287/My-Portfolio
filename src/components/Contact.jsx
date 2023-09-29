@@ -3,9 +3,9 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { MdArrowForward } from 'react-icons/md';
 import resume from '../assets/Marco-Software-Resume.pdf'
 import emailjs from 'emailjs-com';
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const Contact = () => {
+const Contact = ({ setIsContactVisible }) => {
   const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +32,26 @@ const Contact = () => {
     setEmail("");
     setMessage("");
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Set the state based on whether the Contact component is in the viewport
+          setIsContactVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.5 } // Adjust the threshold as needed
+    );
+
+    // Start observing the Contact component
+    observer.observe(form.current);
+
+    // Cleanup the observer on component unmount
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <Box
         bgColor={"#252934"}
