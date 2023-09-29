@@ -48,12 +48,12 @@ const Contact = () => {
         gap={10}
       >
         <GridItem colSpan={1} h="100%">
-          <VStack w={'100%'} justifyContent={'center'} alignItems={'flex-start'} gap={10}>
-            <Heading size={'2xl'}>
+          <VStack w={'100%'} justifyContent={'center'} alignItems={{base: 'center', md: 'flex-start'}} gap={10}>
+            <Heading size={{base: 'xl', lg: '2xl'}} textAlign={{base: 'center', md: 'left'}}>
               Locating me is a breeze, let&rsquo;s get in touch!
             </Heading>
             <Box w={'33%'} border={'1px solid #fff'}></Box>
-            <HStack gap={10} alignItems={'center'} w={'100%'}>
+            <HStack gap={10} justifyContent={{base: 'center', md: 'flex-start'}} alignItems={'center'} w={'100%'}>
               <Link 
                 href="https://github.com/mar69287" 
                 isExternal 
