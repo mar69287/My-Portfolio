@@ -16,22 +16,22 @@ const About = () => {
         gap={0} 
         borderTop={isLargeScreen ? '2px solid #ddd' : 'none'}
         mt={20}
-        mx={20}
+        mx={{base: 0, lg: 20}}
         mb={20}
       >
         <GridItem colSpan={{ base: 1, lg: 2 }} borderRight={isLargeScreen ? '2px solid #ddd' : 'none'}>
-          <VStack pt={10} px={10} pb={5}>
+          <VStack pt={{base: 5, lg: 10}} px={{base: 5, lg: 10}} pb={5}>
             <Image 
               src={profile}
               w={'320px'}
               h={'350px'}
             />
-            <HStack justifyContent={'center'} alignItems={'center'}>
+            <HStack justifyContent={'center'} alignItems={'center'} gap={10}>
               <Link 
                 href="https://github.com/mar69287" 
                 isExternal 
                 color={'#616161'} 
-                fontSize={'1.9rem'}
+                fontSize={{base: '2.5rem', lg: '2.8rem'}}
                 _hover={{
                   color: "#00989D", 
                   transition: "color 0.3s ease",
@@ -43,7 +43,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/marcoruizjr/" 
                 isExternal 
                 color={'#616161'} 
-                fontSize={'1.9rem'}
+                fontSize={{base: '2.5rem', lg: '2.8rem'}}
                 _hover={{
                   color: "#00989D", 
                   transition: "color 0.3s ease", 
@@ -55,7 +55,7 @@ const About = () => {
                 href="mailto:marcoa.ruiz97@gmail.com" 
                 isExternal 
                 color={'#616161'} 
-                fontSize={'1.9rem'}
+                fontSize={{base: '2.5rem', lg: '2.8rem'}}
                 _hover={{
                   color: "#00989D", 
                   transition: "color 0.3s ease", 
@@ -83,7 +83,7 @@ const About = () => {
               </Link>
           </VStack>
         </GridItem>
-        <GridItem colSpan={{ base: 1, lg: 4 }} pl={20} pr={10} py={'3.5rem'} >
+        <GridItem colSpan={{ base: 1, lg: 4 }} pl={{base: 10, lg: 20}} pr={10} py={{base: 5, lg: '3.5rem'}} >
             <VStack justifyContent={'center'} alignItems={'flex-start'}>
                 <Text color={'#b9b9b9'} fontSize={"xl"} fontWeight={'medium'}>
                   ABOUT ME
@@ -98,10 +98,10 @@ const About = () => {
                 </Text>
             </VStack> 
         </GridItem>
-        <GridItem colSpan={{ base: 1, lg: 6 }} mt={5} borderBottom={'2px solid #ddd'} className="logos">
+        <GridItem colSpan={{ base: 1, lg: 6 }} mt={5} borderBottom={'2px solid #ddd'} className="logos" mx={10}>
           <HStack h={'100%'}>
             <HStack whiteSpace={'nowrap'} h={'100%'} backgroundColor={'white'} position={"relative"} zIndex={4} justifyContent={'space-between'} alignItems={'center'} pr={3} borderRight={'2px solid #ddd'}>
-              <Heading w={'10rem'} color={'rgb(33, 36, 46)'} size={'lg'} >
+              <Heading w={{base: '6rem', lg:'10rem'}} color={'rgb(33, 36, 46)'} size={{base: 'md', lg: 'lg'}} >
                   Front End
               </Heading>
             </HStack>
@@ -110,10 +110,10 @@ const About = () => {
             <FrontSkills />
           </HStack>
         </GridItem>
-        <GridItem colSpan={{ base: 1, lg: 6 }}  className="logos">
+        <GridItem colSpan={{ base: 1, lg: 6 }} className="logos" mx={10}>
           <HStack h={'100%'}>
             <HStack whiteSpace={'nowrap'} h={'100%'} backgroundColor={'white'} position={"relative"} zIndex={4} justifyContent={'space-between'} alignItems={'center'} pr={3} borderRight={'2px solid #ddd'}>
-              <Heading w={'10rem'} color={'rgb(33, 36, 46)'} size={'lg'} >
+              <Heading w={{base: '6rem', lg:'10rem'}} color={'rgb(33, 36, 46)'} size={{base: 'md', lg: 'lg'}} >
                   Back End
               </Heading>
             </HStack>
