@@ -89,12 +89,11 @@ const About = () => {
                   ABOUT ME
                 </Text>
                 <Text color={'rgb(33, 36, 46)'} fontSize={"2xl"} mt={3}>
-                  I am a Mechanical Engineer turned Developer who loves exploring the balance between curiosity, 
-                  practicality, and creativity. These three pillars drive me to discover valuable insights, 
-                  rethink problems, and create innovative solutions. 
+                  I am a former Mechanical Engineer turned Developer. I have found a passion for both the precision of engineering and the artistry of coding, one that drives me to create cohesive,
+                  scalable, and user-friendly applications.  
                 </Text>
                 <Text color={'rgb(33, 36, 46)'} fontSize={"2xl"} mt={1}>
-                Outside of programming, I love the outdoors. From camping, to playing sports, to just taking a drive with my beautiful dog. Favorite sports team is FC Barcelona. Visca Barca!
+                  Outside of programming, I love the outdoors. From camping, to playing sports, to just taking a drive with my beautiful dog. Favorite sports team is FC Barcelona. Visca Barca!
                 </Text>
             </VStack> 
         </GridItem>
