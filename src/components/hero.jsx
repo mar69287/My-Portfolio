@@ -1,6 +1,7 @@
 import { Box, HStack, Heading, Text, VStack } from '@chakra-ui/react';
 import heroBackground from '../assets/hero-background.png';
 import { MdArrowForward } from 'react-icons/md'; 
+import { Link } from 'react-scroll'
 import './hero.css'
 
 const Hero = () => {
@@ -14,27 +15,29 @@ const Hero = () => {
       alignItems="center"
       justifyContent="center"
       id="hero"
+      px={5}
     >
       <VStack>
-        <Heading size={'4xl'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
+        <Heading size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
             Marco Ruiz
         </Heading>
-        <Text color={'#fff'} fontSize={'2xl'}>
+        <Box justifyContent={'center'} display={'flex'} flexWrap={'wrap'}>
+          <Text fontSize={{ base: 'xl', md: '2xl' }} color={'#fff'} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
             <span className="letter">F</span>
             <span className="letter">u</span>
             <span className="letter">l</span>
             <span className="letter">l</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">S</span>
             <span className="letter">t</span>
             <span className="letter">a</span>
             <span className="letter">c</span>
             <span className="letter">k</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">W</span>
             <span className="letter">e</span>
             <span className="letter">b</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">D</span>
             <span className="letter">e</span>
             <span className="letter">v</span>
@@ -44,9 +47,11 @@ const Hero = () => {
             <span className="letter">p</span>
             <span className="letter">e</span>
             <span className="letter">r</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span >|</span>
-            <Text display={'inline-block'} mr={2}></Text>
+          </Text>
+          <Text color={'#fff'} fontSize={{ base: 'xl', md: '2xl' }} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">S</span>
             <span className="letter">o</span>
             <span className="letter">f</span>
@@ -55,7 +60,7 @@ const Hero = () => {
             <span className="letter">a</span>
             <span className="letter">r</span>
             <span className="letter">e</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">E</span>
             <span className="letter">n</span>
             <span className="letter">g</span>
@@ -64,16 +69,18 @@ const Hero = () => {
             <span className="letter">e</span>
             <span className="letter">e</span>
             <span className="letter">r</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span>|</span>
-            <Text display={'inline-block'} mr={2}></Text>
+          </Text>
+          <Text color={'#fff'} fontSize={{ base: 'xl', md: '2xl' }} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}s>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">S</span>
             <span className="letter">p</span>
             <span className="letter">o</span>
             <span className="letter">r</span>
             <span className="letter">t</span>
             <span className="letter">s</span>
-            <Text display={'inline-block'} mr={2}></Text>
+            <span style={{ marginRight: '9px' }}></span>
             <span className="letter">E</span>
             <span className="letter">n</span>
             <span className="letter">t</span>
@@ -84,11 +91,14 @@ const Hero = () => {
             <span className="letter">a</span>
             <span className="letter">s</span>
             <span className="letter">t</span>
-        </Text>
-        <HStack mt={1} className='button style1'>
-              <Text>View My Projects</Text>
-              <MdArrowForward className="arrow-icon"/>
-            </HStack>
+          </Text>
+        </Box>
+        <Link to='projects' spy={true} smooth={true}>
+          <HStack mt={1} className='button style1'>
+            <Text fontSize={{ base: 'xl', md: '2xl' }}>View My Projects</Text>
+            <MdArrowForward className="arrow-icon"/>
+          </HStack>
+        </Link>
       </VStack>
     </Box>
   );
