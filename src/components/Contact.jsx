@@ -37,17 +37,15 @@ const Contact = ({ setIsContactVisible }) => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // Set the state based on whether the Contact component is in the viewport
+
           setIsContactVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0.5 } // Adjust the threshold as needed
+      { threshold: 0.5 } 
     );
 
-    // Start observing the Contact component
     observer.observe(form.current);
 
-    // Cleanup the observer on component unmount
     return () => {
       observer.disconnect();
     };
