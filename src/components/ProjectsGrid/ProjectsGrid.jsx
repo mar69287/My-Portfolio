@@ -42,7 +42,7 @@ const ProjectsGrid = () => {
                     <Image 
                         src={dev}
                         objectFit={'cover'}
-                        h={'100%'} w={{base:'100%', sm: '70%', md:'100%'}}
+                        h={'100%'} w={{base:'100%', sm: '70%', md:'99%'}}
                     />
                     <VStack
                         top="50%"
@@ -100,7 +100,7 @@ const ProjectsGrid = () => {
                     <Image 
                         src={tienda}
                         objectFit={'cover'}
-                        h={'100%'} w={{base:'100%', sm: '70%', md:'100%'}}
+                        h={'100%'} w={{base:'100%', sm: '70%', md:'99%'}}
                     />
                     <VStack
                         top="50%"
@@ -159,7 +159,7 @@ const ProjectsGrid = () => {
                     <Image 
                         src={insight}
                         objectFit={'fill'}
-                        h={'100%'} w={{base:'100%', sm: '70%', md:'100%'}}
+                        h={'100%'} w={{base:'100%', sm: '70%', md:'99%'}}
                     />
                     <VStack
                         top="50%"
@@ -219,7 +219,7 @@ const ProjectsGrid = () => {
                     <Image 
                         src={little}
                         objectFit={'fill'}
-                        h={'100%'} w={{base:'100%', sm: '70%', md:'100%'}}
+                        h={'100%'} w={{base:'100%', sm: '70%', md:'99%'}}
                     />
                     <VStack
                         top="50%"
