@@ -5,6 +5,7 @@ import resume from '../assets/Marco-Software-Resume.pdf'
 import './About.css'
 import FrontSkills from "./FrontSkills";
 import BackSkills from "./BackSkills";
+import { MdArrowForward } from 'react-icons/md';
 
 const About = () => {
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
@@ -64,23 +65,12 @@ const About = () => {
                 <AiOutlineMail />
               </Link>
             </HStack>
-            <Link 
-                href={resume}
-                isExternal 
-                color={'#fff'} 
-                fontSize={'1.5rem'}
-                border={'2px solid #e31b6d'}
-                bgColor={'#e31b6d'}
-                px={'1.4rem'}
-                py={'.1rem'}
-                _hover={{
-                  color: "#fff", 
-                  backgroundColor: '#e31b6d',
-                  transition: "all .6s ease", 
-                }}
-              >
-                RESUME
-              </Link>
+            <Link isExternal href={resume} _hover={{ textDecoration: 'none' }}>
+                <HStack mt={6} className='btn'>
+                    <Text fontSize={'2xl'} fontWeight={'semibold'}>Resume</Text>
+                    <MdArrowForward className="arrow-icon"/>
+                </HStack>
+            </Link>
           </VStack>
         </GridItem>
         <GridItem colSpan={{ base: 1, lg: 4 }} pl={{base: 10, lg: 20}} pr={10} py={{base: 5, lg: '3.5rem'}} >
