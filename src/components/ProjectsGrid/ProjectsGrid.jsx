@@ -5,8 +5,27 @@ import tienda from '../../assets/tienda.png'
 import little from '../../assets/little.png'
 import insight from '../../assets/insight.png'
 import { Image } from '@chakra-ui/image';
+import { useRef, useEffect } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion'
+
+const AnimatedGridItem = motion(GridItem);
 
 const ProjectsGrid = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, {once: 'true'});
+  const mainControls = useAnimation();
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  useEffect(() => {
+    if (isInView) 
+    {
+      mainControls.start('visible')
+    }
+
+  }, [isInView])
 
   return (
     <>
@@ -15,8 +34,9 @@ const ProjectsGrid = () => {
             gap={10}
             rowGap={{base: 5, md: 20}}
             placeItems={'center'}
+            ref={ref}
         >
-            <GridItem colSpan={{base: 3, md:1}} >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} colSpan={{base: 3, md:1}} >
                 <VStack justifyContent={'center'} alignItems={'flex-start'} gap={{base: 5, md: 10}}>
                     <Heading textAlign={'left'} color={'rgb(33, 36, 46)'} size={'2xl'}>
                         DevConnect
@@ -37,8 +57,8 @@ const ProjectsGrid = () => {
                         </Link>
                     </Box>
                 </VStack>
-            </GridItem>
-            <GridItem mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
                     <Image 
                         src={dev}
                         objectFit={'cover'}
@@ -76,8 +96,8 @@ const ProjectsGrid = () => {
                             Visit
                         </Link>
                     </VStack>
-            </GridItem>
-            <GridItem colSpan={{base: 3, md:1}}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} colSpan={{base: 3, md:1}}>
                 <VStack justifyContent={'center'} alignItems={'flex-start'} gap={{base: 5, md: 10}}>
                     <Heading textAlign={'left'} color={'rgb(33, 36, 46)'} size={'2xl'}>
                         Tienda Maya
@@ -95,8 +115,8 @@ const ProjectsGrid = () => {
                         </Link>
                     </Box>
                 </VStack>
-            </GridItem>
-            <GridItem mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
                     <Image 
                         src={tienda}
                         objectFit={'cover'}
@@ -135,8 +155,8 @@ const ProjectsGrid = () => {
                             Visit
                         </Link>
                     </VStack>
-            </GridItem>
-            <GridItem colSpan={{base: 3, md:1}}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} colSpan={{base: 3, md:1}}>
                 <VStack justifyContent={'center'} alignItems={'flex-start'} gap={{base: 5, md: 10}}>
                     <Heading textAlign={'left'} color={'rgb(33, 36, 46)'} size={'2xl'}>
                         InSight
@@ -154,8 +174,8 @@ const ProjectsGrid = () => {
                         </Link>
                     </Box>
                 </VStack>
-            </GridItem>
-            <GridItem mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
                     <Image 
                         src={insight}
                         objectFit={'fill'}
@@ -195,8 +215,8 @@ const ProjectsGrid = () => {
                         </Link>
                     </VStack>
                 {/* </Link> */}
-            </GridItem>
-            <GridItem colSpan={{base: 3, md:1}}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} colSpan={{base: 3, md:1}}>
                 <VStack justifyContent={'center'} alignItems={'flex-start'} gap={{base: 5, md: 10}}>
                     <Heading textAlign={'left'} color={'rgb(33, 36, 46)'} size={'2xl'}>
                         Little Learners
@@ -214,8 +234,8 @@ const ProjectsGrid = () => {
                         </Link>
                     </Box>
                 </VStack>
-            </GridItem>
-            <GridItem mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
+            </AnimatedGridItem >
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
                     <Image 
                         src={little}
                         objectFit={'fill'}
@@ -254,8 +274,7 @@ const ProjectsGrid = () => {
                             Visit
                         </Link>
                     </VStack>
-                {/* </Link> */}
-            </GridItem>
+            </AnimatedGridItem >
         </Grid>
     </>
   )
