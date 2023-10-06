@@ -6,19 +6,39 @@ import './About.css'
 import FrontSkills from "./FrontSkills";
 import BackSkills from "./BackSkills";
 import { MdArrowForward } from 'react-icons/md';
+import { useRef, useEffect } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion'
+
+const AnimatedGrid = motion(Grid);
 
 const About = () => {
   const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+  const ref = useRef(null)
+  const isInView = useInView(ref, {once: 'true'});
+  const mainControls = useAnimation();
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  useEffect(() => {
+    if (isInView) 
+    {
+      mainControls.start('visible')
+    }
+
+  }, [isInView])
 
   return (
-    <Box bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} m='0 auto'>
-      <Grid
+    <Box ref={ref} bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} m='0 auto'>
+      <AnimatedGrid
         templateColumns={{ base: "1fr", lg: "repeat(6, 1fr)" }} 
         gap={0} 
         borderTop={isLargeScreen ? '2px solid #ddd' : 'none'}
         mt={20}
         mx={{base: 0, lg: 20}}
         mb={20}
+        variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}}
       >
         <GridItem colSpan={{ base: 1, lg: 2 }} borderRight={isLargeScreen ? '2px solid #ddd' : 'none'}>
           <VStack pt={{base: 5, lg: 10}} px={{base: 5, lg: 10}} pb={5}>
@@ -111,7 +131,7 @@ const About = () => {
             <BackSkills />
           </HStack>
         </GridItem>
-      </Grid> 
+      </AnimatedGrid> 
     </Box>
   );
 };
