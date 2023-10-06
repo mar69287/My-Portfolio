@@ -1,5 +1,4 @@
 import { Box, HStack, Heading, Image, Text, VStack } from '@chakra-ui/react';
-// import heroBackground from '../assets/hero-background.png';
 import waves from '../assets/layer-1.png';
 import { MdArrowForward } from 'react-icons/md'; 
 import { Link } from 'react-scroll'
@@ -8,108 +7,37 @@ import '../three-utility'
 import { pointsOuter } from '../three-utility';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere } from '@react-three/drei';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion'
 
+const AnimatedHeading = motion(Heading);
+const AnimatedBox = motion(Box);
+const AnimatedStack = motion(HStack);
 
 const Hero = () => {
+  const heroRef = useRef(null);
+  const isInView = useInView(heroRef, {once: 'true'});
+  const mainControls = useAnimation();
+
+  const variants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  useEffect(() => {
+    if (isInView) 
+    {
+      mainControls.start('visible')
+    }
+
+  }, [isInView])
+
   return (
     <Box
-      // h="100vh"
-      // w={'100%'}
-      // backgroundImage={`url(${waves})`}
-      // backgroundRepeat="no-repeat"
-      // backgroundSize="cover"
-      // display="flex"
-      // alignItems="center"
-      // justifyContent="center"
       id="hero"
-      // px={5}
       position={'relative'}
       as={'section'}
     >
-      {/* <VStack backgroundColor={'none'} position={'relative'} zIndex={3} mx={5}>
-        <Heading size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
-            Marco Ruiz
-        </Heading>
-        <Box justifyContent={'center'} display={'flex'} flexWrap={'wrap'}>
-          <Text fontSize={{ base: 'xl', md: '2xl' }} color={'#fff'} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
-            <span className="letter">F</span>
-            <span className="letter">u</span>
-            <span className="letter">l</span>
-            <span className="letter">l</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">S</span>
-            <span className="letter">t</span>
-            <span className="letter">a</span>
-            <span className="letter">c</span>
-            <span className="letter">k</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">W</span>
-            <span className="letter">e</span>
-            <span className="letter">b</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">D</span>
-            <span className="letter">e</span>
-            <span className="letter">v</span>
-            <span className="letter">e</span>
-            <span className="letter">l</span>
-            <span className="letter">o</span>
-            <span className="letter">p</span>
-            <span className="letter">e</span>
-            <span className="letter">r</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span >|</span>
-          </Text>
-          <Text color={'#fff'} fontSize={{ base: 'xl', md: '2xl' }} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">S</span>
-            <span className="letter">o</span>
-            <span className="letter">f</span>
-            <span className="letter">t</span>
-            <span className="letter">w</span>
-            <span className="letter">a</span>
-            <span className="letter">r</span>
-            <span className="letter">e</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">E</span>
-            <span className="letter">n</span>
-            <span className="letter">g</span>
-            <span className="letter">i</span>
-            <span className="letter">n</span>
-            <span className="letter">e</span>
-            <span className="letter">e</span>
-            <span className="letter">r</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span>|</span>
-          </Text>
-          <Text color={'#fff'} fontSize={{ base: 'xl', md: '2xl' }} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}s>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">S</span>
-            <span className="letter">p</span>
-            <span className="letter">o</span>
-            <span className="letter">r</span>
-            <span className="letter">t</span>
-            <span className="letter">s</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">E</span>
-            <span className="letter">n</span>
-            <span className="letter">t</span>
-            <span className="letter">h</span>
-            <span className="letter">u</span>
-            <span className="letter">s</span>
-            <span className="letter">i</span>
-            <span className="letter">a</span>
-            <span className="letter">s</span>
-            <span className="letter">t</span>
-          </Text>
-        </Box>
-        <Link to='projects' spy={true} smooth={true}>
-          <HStack mt={1} className='button style1'>
-            <Text fontSize={{ base: 'xl', md: '2xl' }}>View My Projects</Text>
-            <MdArrowForward className="arrow-icon"/>
-          </HStack>
-        </Link>
-      </VStack> */}
       <Box position={'absolute'} zIndex={2} bottom={0}>
         <Image 
           w={'100vw'}
@@ -122,15 +50,6 @@ const Hero = () => {
         camera={{
           position: [10, -7.5, -5],
         }}
-        // style={{
-        //   position: 'absolute',
-        //   top: 0,
-        //   left: 0,
-        //   width: '100%',
-        //   height: '100%',
-        //   zIndex: '-4', 
-        //   background: '#1E2029',
-        // }}
         style={{background: '#1E2029', height: '100vh'}}
       >
         <OrbitControls maxDistance={20} minDistance={10}/>
@@ -138,11 +57,11 @@ const Hero = () => {
         <pointLight position={[-30, 0, -30]} power={10.0}/>
         <PointCircle />
       </Canvas>
-      <VStack position="absolute" zIndex={3} top="50%" left="50%" transform="translate(-50%, -50%)">
-        <Heading size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
+      <VStack ref={heroRef}  position="absolute" zIndex={3} top="50%" left="50%" transform="translate(-50%, -50%)">
+        <AnimatedHeading variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
             Marco Ruiz
-        </Heading>
-        <Box justifyContent={'center'} display={'flex'} flexWrap={'wrap'}>
+        </AnimatedHeading >
+        <AnimatedBox variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} justifyContent={'center'} display={'flex'} flexWrap={'wrap'}>
           <Text fontSize={{ base: 'xl', md: '2xl' }} color={'#fff'} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
             <span className="letter">F</span>
             <span className="letter">u</span>
@@ -213,15 +132,14 @@ const Hero = () => {
             <span className="letter">s</span>
             <span className="letter">t</span>
           </Text>
-        </Box>
+        </AnimatedBox>
         <Link to='projects' spy={true} smooth={true}>
-          <HStack mt={1} className='button style1'>
+          <AnimatedStack variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mt={1} className='button style1'>
             <Text fontSize={{ base: 'xl', md: '2xl' }}>View My Projects</Text>
             <MdArrowForward className="arrow-icon"/>
-          </HStack>
+          </AnimatedStack>
         </Link>
       </VStack>
-
     </Box>
   );
 };
