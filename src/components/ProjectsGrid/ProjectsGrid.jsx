@@ -82,7 +82,7 @@ const ProjectsGrid = () => {
                         alignItems={'center'}
                         gap={10}
                     >
-                        <Text color={'#e31b60'} fontSize={{base: 'xl', md: '2xl'}} textAlign={'center'}>MERN / Chat Engine / Chakra-UI</Text>
+                        <Text color={'#e31b60'} fontSize={{base: 'xl', md: '2xl'}} textAlign={'center'}>MERN / Chat Engine / Chakra-UI / AWS</Text>
                         <Link 
                             isExternal
                             href='https://devconnect-social-d5ad076571e6.herokuapp.com/' 
