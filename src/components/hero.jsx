@@ -1,14 +1,11 @@
-import { Box, HStack, Heading, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Divider, HStack, Heading, Hide, Image, Show, Text, VStack } from '@chakra-ui/react';
 import waves from '../assets/layer-1.png';
 import { MdArrowForward } from 'react-icons/md'; 
 import { Link } from 'react-scroll'
 import './hero.css'
-import '../three-utility'
-import { pointsOuter } from '../three-utility';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere } from '@react-three/drei';
 import { useRef, useEffect } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion'
+import Background from './Background';
 
 const AnimatedHeading = motion(Heading);
 const AnimatedBox = motion(Box);
@@ -20,8 +17,8 @@ const Hero = () => {
   const mainControls = useAnimation();
 
   const variants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
   };
 
   useEffect(() => {
@@ -31,6 +28,8 @@ const Hero = () => {
     }
 
   }, [isInView])
+
+  
 
   return (
     <Box
@@ -46,134 +45,65 @@ const Hero = () => {
           objectFit={{base: 'cover', md: 'fill'}}
         />
       </Box>
-      <Canvas
-        camera={{
-          position: [10, -7.5, -5],
-        }}
-        style={{background: '#1E2029', height: '100vh'}}
+      <Background />
+      {/* <AnimatedHeading variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}> */}
+      <VStack
+        position="absolute" gap={2} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'} alignItems={'center'} justifyContent={'center'} display={'flex'}
+        h={'max-content'} w={'max-content'}
       >
-        <OrbitControls maxDistance={20} minDistance={10}/>
-        <directionalLight />
-        <pointLight position={[-30, 0, -30]} power={10.0}/>
-        <PointCircle />
-      </Canvas>
-      <VStack ref={heroRef}  position="absolute" zIndex={3} top="50%" left="50%" transform="translate(-50%, -50%)">
-        <AnimatedHeading variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
-            Marco Ruiz
-        </AnimatedHeading >
-        <AnimatedBox variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} justifyContent={'center'} display={'flex'} flexWrap={'wrap'}>
-          <Text fontSize={{ base: 'xl', md: '2xl' }} color={'#fff'} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
-            <span className="letter">F</span>
-            <span className="letter">u</span>
-            <span className="letter">l</span>
-            <span className="letter">l</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">S</span>
-            <span className="letter">t</span>
-            <span className="letter">a</span>
-            <span className="letter">c</span>
-            <span className="letter">k</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">W</span>
-            <span className="letter">e</span>
-            <span className="letter">b</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">D</span>
-            <span className="letter">e</span>
-            <span className="letter">v</span>
-            <span className="letter">e</span>
-            <span className="letter">l</span>
-            <span className="letter">o</span>
-            <span className="letter">p</span>
-            <span className="letter">e</span>
-            <span className="letter">r</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span >|</span>
-          </Text>
-          <Text color={'#fff'} fontSize={{ base: 'xl', md: '2xl' }} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">S</span>
-            <span className="letter">o</span>
-            <span className="letter">f</span>
-            <span className="letter">t</span>
-            <span className="letter">w</span>
-            <span className="letter">a</span>
-            <span className="letter">r</span>
-            <span className="letter">e</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">E</span>
-            <span className="letter">n</span>
-            <span className="letter">g</span>
-            <span className="letter">i</span>
-            <span className="letter">n</span>
-            <span className="letter">e</span>
-            <span className="letter">e</span>
-            <span className="letter">r</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span>|</span>
-          </Text>
-          <Text color={'#fff'} fontSize={{ base: 'xl', md: '2xl' }} textAlign={'center'} display={'inline-block'} whiteSpace={'nowrap'}s>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">S</span>
-            <span className="letter">p</span>
-            <span className="letter">o</span>
-            <span className="letter">r</span>
-            <span className="letter">t</span>
-            <span className="letter">s</span>
-            <span style={{ marginRight: '9px' }}></span>
-            <span className="letter">E</span>
-            <span className="letter">n</span>
-            <span className="letter">t</span>
-            <span className="letter">h</span>
-            <span className="letter">u</span>
-            <span className="letter">s</span>
-            <span className="letter">i</span>
-            <span className="letter">a</span>
-            <span className="letter">s</span>
-            <span className="letter">t</span>
-          </Text>
-        </AnimatedBox>
-        <Link to='projects' spy={true} smooth={true}>
-          <AnimatedStack variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mt={1} className='button style1'>
-            <Text fontSize={{ base: 'xl', md: '2xl' }}>View My Projects</Text>
-            <MdArrowForward className="arrow-icon"/>
-          </AnimatedStack>
-        </Link>
+        <Heading
+          size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
+        >
+          Marco Ruiz
+        </Heading>
+        <HStack display={'flex'} w={{base:'18rem', sm:'30rem', md: '48rem'}} gap={0} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'} fontSize={{ base: 'xl', md: '2xl' }} color={'#fff'} textAlign={'center'}>
+          <Box>
+            <Text >Full-Stack Web Developer</Text>
+          </Box>
+          <Show above='sm'>
+            <Box border={'1px solid '} h={'1rem'} mx={3} />
+          </Show>
+          <Box>
+            <Text >Software Engineer</Text>
+          </Box>
+          <Show above='md'>
+            <Box border={'1px solid '} h={'1rem'} mx={3} />
+          </Show>
+          <Box>
+            <Text >Sports Enthusiast</Text>
+          </Box>
+        </HStack>
       </VStack>
+
     </Box>
   );
 };
 
-const PointCircle = () => {
-  const ref = useRef(null)
-  useFrame(({ clock }) => {
-    if (ref.current?.rotation) {
-      ref.current.rotation.z = clock.getElapsedTime() * 0.05;
-    }
-  });
-  return (
-    <group ref={ref}>
-        {/* {pointsInner.map((point) => (
-          <Point key={point.idx} position={point.position} color={point.color} />
-        ))} */}
-        {pointsOuter.map((point) => (
-          <Point key={point.idx} position={point.position} color={point.color} />
-        ))}
-    </ group>
-  )
-}
-
-const Point = ({ position, color }) => {
-  return (
-    <Sphere position={position} args={[0.03, 10, 10]}>
-      <meshStandardMaterial
-        emissive={color}
-        emissiveIntensity={0.5}
-        roughness={0.5}
-        color={color}
-      />
-    </Sphere>
-  );
-};
-
 export default Hero;
+      {/* <VStack gap={0} ref={heroRef} lineHeight={[1.3,.5]} position="absolute" zIndex={3} top="50%" left="50%" transform="translate(-50%, -50%)" w={'max-content'}>
+        <AnimatedHeading transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
+            Hi There i&apos;m
+        </AnimatedHeading >
+        <Box display={'flex'} w={'full'} px={1} justifyContent={'space-between'} alignItems={'center'} pos={'relative'}>
+          <Text fontSize={['xs','xs', 'sm']} color={'whiteAlpha.800'}>Engineer</Text>
+          <Text fontSize={['xs','xs', 'sm']} color={'whiteAlpha.800'}>Developer</Text>
+          <Box position={'absolute'} left={0} right={0} mx={'auto'} w={'full'} color={'whiteAlpha.800'} textAlign={'center'} fontSize={['xs', 'xs', 'sm']}>Sports Enthusiast</Box>
+        </Box>
+        <Box display={'flex'} justifyContent={'center'} alignItems={'center'} gap={2}>
+          <AnimatedHeading 
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0, transition: {delay: .4, duration: .4} }}
+            transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
+              Marco 
+          </AnimatedHeading >
+          <AnimatedHeading 
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0, transition: {delay: .4, duration: .4} }}
+            transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
+              Ruiz
+          </AnimatedHeading >
+        </Box>
+      </VStack>
+      <Box position={'absolute'} zIndex={4} bottom={3} left={3} w={32} color={'#f1f5f9'} fontWeight={'semibold'} fontSize={['sm', 'sm', 'md']}>
+        Committed to turning <span style={{color: '#f1f5f9'}}>complex problems</span> into <span style={{color: 'RGB(255, 255, 255)'}}>intuitive designs</span>.
+      </Box> */}
