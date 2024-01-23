@@ -5,7 +5,7 @@ import resume from '../assets/Marco-Software-Resume.pdf'
 import emailjs from 'emailjs-com';
 import { useEffect, useRef, useState } from "react";
 
-const Contact = ({ setIsContactVisible }) => {
+const Contact = () => {
   const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,23 +33,7 @@ const Contact = ({ setIsContactVisible }) => {
     setMessage("");
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-
-          setIsContactVisible(entry.isIntersecting);
-        });
-      },
-      { threshold: 0.5 } 
-    );
-
-    observer.observe(form.current);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+ 
   return (
     <Box
         bgColor={"#252934"}
