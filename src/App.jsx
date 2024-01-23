@@ -28,10 +28,7 @@ function App() {
       ) : (
         <>
         <Navbar setSelected={setSelected} selected={selected}/>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        {Sections[selected].Feature}
         </>
       )}
       
@@ -40,3 +37,18 @@ function App() {
 }
 
 export default App
+
+const Sections = [
+  {
+    Feature: <Hero />,
+  },
+  {
+    Feature: <About />,
+  },
+  {
+    Feature: <Projects />,
+  },
+  {
+    Feature: <Contact />,
+  }
+];
