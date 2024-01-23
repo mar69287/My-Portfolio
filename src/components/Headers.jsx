@@ -7,13 +7,13 @@ const Headers = ({ left, right}) => {
         w={'full'} display={'flex'} justifyContent={'center'} alignItems={'center'} gap={4}
     >
         <Heading
-            size={{ base: '2xl', md: '3xl' }}
+            size={{ base: '3xl', md: '4xl' }}
             fontWeight={'thin'} textTransform={'uppercase'}
         >
             {left}
         </Heading>
         <Heading
-            size={{ base: '2xl', md: '3xl' }}
+            size={{ base: '3xl', md: '4xl' }}
             fontWeight={'thin'} textTransform={'uppercase'}
         >
             {right}
