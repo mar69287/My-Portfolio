@@ -3,7 +3,7 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { MdArrowForward } from 'react-icons/md';
 import resume from '../assets/Marco-Software-Resume.pdf'
 import emailjs from 'emailjs-com';
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const Contact = () => {
   const form = useRef();
