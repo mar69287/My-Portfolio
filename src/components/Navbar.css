@@ -18,5 +18,5 @@
 
 nav {
     backdrop-filter: blur(15px);
-    box-shadow: 0 0 10px 5px rgba(4, 194, 201, 0.5)
+    /* box-shadow: 0 0 10px 5px rgba(4, 194, 201, 0.5) */
 }
