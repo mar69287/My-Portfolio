@@ -46,64 +46,53 @@ const Hero = () => {
         />
       </Box>
       <Background />
-      {/* <AnimatedHeading variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}> */}
-      <VStack
-        position="absolute" gap={2} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'} alignItems={'center'} justifyContent={'center'} display={'flex'}
-        h={'max-content'} w={'max-content'}
+      <Box
+         position="absolute" gap={0} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'}  alignItems={'center'}
+         h={'10rem'} w={{base: '100%', lg: '1000px', '2xl': '1400px'}} justifyContent={'center'} display={'flex'}
+         px={1}
       >
-        <Heading
-          size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
+        <VStack
+          alignItems={'start'} gap={0}
+          h={'max-content'} w={'max-content'}
         >
-          Marco Ruiz
-        </Heading>
-        <HStack display={'flex'} w={{base:'18rem', sm:'30rem', md: '48rem'}} gap={0} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'} fontSize={{ base: 'xl', md: '2xl' }} color={'#fff'} textAlign={'center'}>
-          <Box>
-            <Text >Full-Stack Web Developer</Text>
-          </Box>
-          <Show above='sm'>
-            <Box border={'1px solid '} h={'1rem'} mx={3} />
-          </Show>
-          <Box>
-            <Text >Software Engineer</Text>
-          </Box>
-          <Show above='md'>
-            <Box border={'1px solid '} h={'1rem'} mx={3} />
-          </Show>
-          <Box>
-            <Text >Sports Enthusiast</Text>
-          </Box>
-        </HStack>
-      </VStack>
-
+          <Heading
+            size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'thin'} color={'#fff'}
+            ml={1}
+          >
+            Software
+          </Heading>
+          <HStack justifyContent={'start'} alignItems={'end'} gap={0}>
+            <Heading
+              size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
+              m={0}
+              style={{lineHeight: '.8'}}
+            >
+              Engineer
+            </Heading>
+            <Heading
+              size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'normal'} color={'#fff'}
+              ml={1}
+            >
+              &
+            </Heading>
+          </HStack>
+          <Heading
+            size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'thin'} color={'#fff'}
+            ml={1}
+          >
+            Full-Stack
+          </Heading>
+          <Heading
+              size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
+              m={0}
+              style={{lineHeight: '.8'}}
+            >
+              Developer
+            </Heading>
+        </VStack>
+      </Box>
     </Box>
   );
 };
 
 export default Hero;
-      {/* <VStack gap={0} ref={heroRef} lineHeight={[1.3,.5]} position="absolute" zIndex={3} top="50%" left="50%" transform="translate(-50%, -50%)" w={'max-content'}>
-        <AnimatedHeading transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
-            Hi There i&apos;m
-        </AnimatedHeading >
-        <Box display={'flex'} w={'full'} px={1} justifyContent={'space-between'} alignItems={'center'} pos={'relative'}>
-          <Text fontSize={['xs','xs', 'sm']} color={'whiteAlpha.800'}>Engineer</Text>
-          <Text fontSize={['xs','xs', 'sm']} color={'whiteAlpha.800'}>Developer</Text>
-          <Box position={'absolute'} left={0} right={0} mx={'auto'} w={'full'} color={'whiteAlpha.800'} textAlign={'center'} fontSize={['xs', 'xs', 'sm']}>Sports Enthusiast</Box>
-        </Box>
-        <Box display={'flex'} justifyContent={'center'} alignItems={'center'} gap={2}>
-          <AnimatedHeading 
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0, transition: {delay: .4, duration: .4} }}
-            transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
-              Marco 
-          </AnimatedHeading >
-          <AnimatedHeading 
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0, transition: {delay: .4, duration: .4} }}
-            transition={{duration: 0.5, delay: 0.1}} size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}>
-              Ruiz
-          </AnimatedHeading >
-        </Box>
-      </VStack>
-      <Box position={'absolute'} zIndex={4} bottom={3} left={3} w={32} color={'#f1f5f9'} fontWeight={'semibold'} fontSize={['sm', 'sm', 'md']}>
-        Committed to turning <span style={{color: '#f1f5f9'}}>complex problems</span> into <span style={{color: 'RGB(255, 255, 255)'}}>intuitive designs</span>.
-      </Box> */}
