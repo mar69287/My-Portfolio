@@ -17,4 +17,12 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-}
+  overrides: [
+    {
+      files: ['*.jsx', '*.js'],
+      rules: {
+        'react/prop-types': 'off', // Disable prop-types rule for React components
+      },
+    },
+  ],
+};
