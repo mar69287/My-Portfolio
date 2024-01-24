@@ -5,15 +5,18 @@ const Headers = ({ left, right}) => {
   return (
     <Box
         w={'full'} display={'flex'} justifyContent={'center'} alignItems={'center'} gap={4}
+        mb={{base: 1, md: 7, lg: 10}}
     >
         <Heading
-            size={{ base: '3xl', md: '4xl' }}
+            // size={{ base: '3xl', md: '4xl' }}
+            fontSize={{base: '45px', md: '70px'}}
             fontWeight={'thin'} textTransform={'uppercase'}
         >
             {left}
         </Heading>
         <Heading
-            size={{ base: '3xl', md: '4xl' }}
+            // size={{ base: '30px', md: '4xl' }}
+            fontSize={{base: '45px', md: '70px'}}
             fontWeight={'thin'} textTransform={'uppercase'}
         >
             {right}
