@@ -14,7 +14,7 @@ import Skills from "./Skills";
 const AnimatedGrid = motion(Grid);
 
 const About = () => {
-  const isLargeScreen = useBreakpointValue({ base: false, lg: true });
+  // const isLargeScreen = useBreakpointValue({ base: false, lg: true });
   const ref = useRef(null)
   const isInView = useInView(ref, {once: 'true'});
   const mainControls = useAnimation();
@@ -32,7 +32,7 @@ const About = () => {
   }, [isInView])
 
   return (
-    <Box ref={ref} bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'center'} m='0 auto' pt={{base:20, lg: 24}}>
+    <Box ref={ref} bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} m='0 auto' pt={{base:20, lg: 24}}>
       <Headers left={'about'} right={'me'} />
       <AnimatedGrid
         templateColumns={{ base: "1fr", md: '1fr 1fr', lg: "repeat(6, 1fr)" }} 
