@@ -19,11 +19,11 @@ const Projects = () => {
   return (
     <Box
       minH="100vh"
-      bgColor={"rgb(244, 243, 243)"}
+      bgColor={"#fff"}
+      py={{base:20, lg: 24}}
       id="projects"
       as="section"
       // py={20}
-      py={{base:20, lg: 24}}
       // px={{base: '5', lg: '0'}}
     >
       <Headers left={'select'} right={'work'} />
