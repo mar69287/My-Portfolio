@@ -32,7 +32,7 @@ const About = () => {
   }, [isInView])
 
   return (
-    <Box ref={ref} bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'center'} m='0 auto' pt={20}>
+    <Box ref={ref} bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'center'} m='0 auto' pt={{base:20, lg: 24}}>
       <Headers left={'about'} right={'me'} />
       <AnimatedGrid
         templateColumns={{ base: "1fr", md: '1fr 1fr', lg: "repeat(6, 1fr)" }} 
@@ -41,7 +41,7 @@ const About = () => {
         borderTop={{base: 'none', md: '2px solid #ddd'}}
         mx={{base: 0, lg: 20}}
         // mt={isLargeScreen ? 12 : 3}
-        mt={{base: 1, md: 7, lg: 10}}
+        // mt={{base: 1, md: 7, lg: 10}}
         mb={20}
         variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}}
       >
