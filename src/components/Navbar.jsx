@@ -1,8 +1,4 @@
 import { HStack, Box } from '@chakra-ui/react';
-import { AiOutlineHome } from 'react-icons/ai';
-import { BsPerson } from 'react-icons/bs';
-import { BiBook, BiMessageDetail } from 'react-icons/bi';
-import { Link } from 'react-scroll';
 import './Navbar.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FaCircle } from "react-icons/fa";
@@ -11,7 +7,7 @@ const Navbar = ({ setSelected, selected }) => {
   const sectionNames = ['Home', 'About', 'Projects', 'Contact'];
   
   return (
-    <HStack as={'nav'} color={'#f5f5f5'} justifyContent={'space-between'} gap={2} bgColor={'rgba(0, 0, 0, 0.2)'} w={'full'} zIndex={6} position={'fixed'} left={'50%'} transform={'translateX(-50%)'} top={'0'} p={".7rem 1.7rem"}  backdropBlur={'15px'}>
+    <HStack as={'nav'} color={'#f5f5f5'} h={{base:'3.2rem', lg: '4rem'}} fontSize={{base: 'md', md: 'lg'}} justifyContent={'space-between'} gap={2} bgColor={'rgba(0, 0, 0, 0.2)'} w={'full'} zIndex={20} position={'fixed'} left={'50%'} transform={'translateX(-50%)'} top={'0'} p={".7rem 1.7rem"}  backdropBlur={'15px'}>
         <Box>
                 MR
         </Box>
