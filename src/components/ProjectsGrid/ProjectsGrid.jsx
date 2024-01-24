@@ -41,7 +41,7 @@ const ProjectsGrid = () => {
                     <Heading textAlign={'left'} color={'rgb(33, 36, 46)'} size={'2xl'}>
                         DevConnect
                     </Heading>
-                    <Box w={'33%'} border={'1px solid rgb(33, 36, 46)'}></Box>
+                    {/* <Box w={{base:'33%', md: '10%'}} border={'1px solid rgb(33, 36, 46)'}></Box> */}
                     <Box>
                         <Text fontSize={'lg'}>
                             Struggling to break into tech?
@@ -58,7 +58,7 @@ const ProjectsGrid = () => {
                     </Box>
                 </VStack>
             </AnimatedGridItem >
-            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'15rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
+            <AnimatedGridItem variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}} mb={{base: 10, md: 0}} colSpan={{base: 3, md:2}} h={{base:'10rem', sm:'17rem', md: '20rem', lg: '30rem'}} display={'flex'} justifyContent={'center'} alignItems={'center'} position={'relative'}>
                     <Image 
                         src={dev}
                         objectFit={'cover'}
