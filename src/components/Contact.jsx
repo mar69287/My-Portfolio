@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import Headers from "./Headers";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const form = useRef();
@@ -51,6 +52,9 @@ const Contact = () => {
         px={5}
         pb={5}
         pt={{base: 5, lg: 0}}
+        as={motion.div}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
       >
         <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
           Want to work together or just say hi? <br /> Locating me is a breeze!

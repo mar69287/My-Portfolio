@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 import Contact from './components/Contact'
 import { useEffect, useState } from "react";
 import SplashPage from './components/SplashPage'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
   const [selected, setSelected] = useState(0); 
@@ -28,7 +29,8 @@ function App() {
       ) : (
         <>
           <Navbar setSelected={setSelected} selected={selected}/>
-          {Sections[selected].Feature}
+
+          <AnimatePresence>{Sections[selected].Feature}</AnimatePresence>
         </>
       )}
       

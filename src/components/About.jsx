@@ -1,49 +1,31 @@
-import { Box, Grid, GridItem, HStack, Image, VStack, Link, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Image, VStack, Link, Text } from "@chakra-ui/react";
 import profile from "../assets/portfolio.png"
 import { AiOutlineMail } from 'react-icons/ai'
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import resume from '../assets/Marco-Software-Resume.pdf'
-import './About.css'
 import { MdArrowForward } from 'react-icons/md';
-import { useRef, useEffect } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Headers from "./Headers";
 import Skills from "./Skills";
 
 const AnimatedGrid = motion(Grid);
 
 const About = () => {
-  // const isLargeScreen = useBreakpointValue({ base: false, lg: true });
-  const ref = useRef(null)
-  const isInView = useInView(ref, {once: 'true'});
-  const mainControls = useAnimation();
-  const variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  useEffect(() => {
-    if (isInView) 
-    {
-      mainControls.start('visible')
-    }
-
-  }, [isInView])
 
   return (
-    <Box ref={ref} bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} m='0 auto' pt={{base:20, lg: 24}}>
+    <Box  
+      bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} m='0 auto' pt={{base:20, lg: 24}}
+    >
       <Headers left={'about'} right={'me'} />
       <AnimatedGrid
         templateColumns={{ base: "1fr", md: '1fr 1fr', lg: "repeat(6, 1fr)" }} 
         gap={0} 
-        // borderTop={isLargeScreen ? '2px solid #ddd' : 'none'}
         borderTop={{base: 'none', md: '2px solid #ddd'}}
         mx={{base: 0, lg: 20}}
-        // mt={isLargeScreen ? 12 : 3}
-        // mt={{base: 1, md: 7, lg: 10}}
         mb={20}
-        variants={variants} initial={'hidden'} animate={mainControls} transition={{duration: 0.5, delay: 0.1}}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
       >
         <GridItem colSpan={{ base: 1, lg: 2 }} borderRight={{base: 'none', md: '2px solid #ddd'}}>
           <VStack pt={{base: 5, lg: 10}} px={{base: 5}} pb={5} >
@@ -200,12 +182,6 @@ const About = () => {
         </GridItem>
       </AnimatedGrid> 
     </Box>
-    // <Box
-    //   bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} m='0 auto'
-    //   mt={14} px={3}
-    // >
-    //   <Headers left={'about'} right={'me'} />
-    // </Box>
   );
 };
 

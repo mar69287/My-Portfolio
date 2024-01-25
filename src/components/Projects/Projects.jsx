@@ -1,11 +1,8 @@
 import { Box, Grid, HStack, Heading, Hide, Link, Show, Text, VStack } from "@chakra-ui/react";
-import './Projects.css';
-// import ProjectsGrid from "../ProjectsGrid/ProjectsGrid";
 import Headers from "../Headers";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaExclamation } from "react-icons/fa6";
-// import { FiGithub } from "react-icons/fi";
 import dev from '../../assets/dev.png'
 import bark from '../../assets/bark.png'
 import tienda from '../../assets/tienda.png'
@@ -23,61 +20,64 @@ const Projects = () => {
       py={{base:20, lg: 24}}
       id="projects"
       as="section"
-      // py={20}
-      // px={{base: '5', lg: '0'}}
     >
       <Headers left={'select'} right={'work'} />
-      <VStack
-        alignItems={'center'}
-        px={2}
-        pb={5}
-        pt={{base: 5, lg: 0}}
+      <Box
+        as={motion.div}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
       >
-        <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
-        Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
-        </Text>
-        <Box w={{base: '40%'}} border={'1px solid black'} my={6}/>
-      </VStack>
-      <Grid 
-         width={{base: '100%', '2xl': '1400px'}} m='0 auto'
-         templateColumns={{ base: "1fr", md: "1fr 1fr"}}
-         gap={{base: 5, md: 3}}
-         px={2} 
-        //  pt={{base: 5, lg: 0}}
-      >
-        <Card
-          title="DevConnect"
-          description="A social platform tailored for developers seeking meaningful connections and portfolio enhancement."
-          tools={['MERN', 'Chat Engine', 'Chakra-UI', 'AWS' ]}
-          imgSrc={dev}
-          github={'https://github.com/mar69287/devConnect'}
-          link={'https://devconnect-social-d5ad076571e6.herokuapp.com/'}
-        />
-        <Card
-          title="Tienda Maya"
-          description="Where the essence of my Guatemalan culture meets contemporary flair in an online marketplace curated for modern tastes and trends."
-          tools={['MERN', 'Stripe API', 'Chakra-UI' ]}
-          imgSrc={tienda}
-          github={'https://github.com/mar69287/tienda-maya'}
-          link={'https://tienda-maya-437e34b34987.herokuapp.com/'}
-        />
-        <Card
-          title="BARK Rescue"
-          description="Directed a cross functional team of five developers to redesign a Non-profit website"
-          tools={['Vite', 'Node.js', 'React', 'Tailwind' ]}
-          imgSrc={bark}
-          github={'https://github.com/jadewang425/winter-hackathon-23'}
-          link={'https://barkanimalrescue.netlify.app/'}
-        />
-        <Card
-          title="Eventiva"
-          description="Say goodbye to long email threads and group texts. Eventiva is your one stop shop to plan a group event everyone will love."
-          tools={['Vite', 'Python', 'React', 'Tailwind', 'AppWrite']}
-          imgSrc={eventiva}
-          github={'https://github.com/mar69287/Eventiva'}
-          link={''}
-        />
-      </Grid>
+        <VStack
+          alignItems={'center'}
+          px={2}
+          pb={5}
+          pt={{base: 5, lg: 0}}
+        >
+          <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
+          Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
+          </Text>
+          <Box w={{base: '40%'}} border={'1px solid black'} my={6}/>
+        </VStack>
+        <Grid
+           width={{base: '100%', '2xl': '1400px'}} m='0 auto'
+           templateColumns={{ base: "1fr", md: "1fr 1fr"}}
+           gap={{base: 5, md: 3}}
+           px={2}
+        >
+          <Card
+            title="DevConnect"
+            description="A social platform tailored for developers seeking meaningful connections and portfolio enhancement."
+            tools={['MERN', 'Chat Engine', 'Chakra-UI', 'AWS' ]}
+            imgSrc={dev}
+            github={'https://github.com/mar69287/devConnect'}
+            link={'https://devconnect-social-d5ad076571e6.herokuapp.com/'}
+          />
+          <Card
+            title="Tienda Maya"
+            description="Where the essence of my Guatemalan culture meets contemporary flair in an online marketplace curated for modern tastes and trends."
+            tools={['MERN', 'Stripe API', 'Chakra-UI' ]}
+            imgSrc={tienda}
+            github={'https://github.com/mar69287/tienda-maya'}
+            link={'https://tienda-maya-437e34b34987.herokuapp.com/'}
+          />
+          <Card
+            title="BARK Rescue"
+            description="Directed a cross functional team of five developers to redesign a Non-profit website"
+            tools={['Vite', 'Node.js', 'React', 'Tailwind' ]}
+            imgSrc={bark}
+            github={'https://github.com/jadewang425/winter-hackathon-23'}
+            link={'https://barkanimalrescue.netlify.app/'}
+          />
+          <Card
+            title="Eventiva"
+            description="Say goodbye to long email threads and group texts. Eventiva is your one stop shop to plan a group event everyone will love."
+            tools={['Vite', 'Python', 'React', 'Tailwind', 'AppWrite']}
+            imgSrc={eventiva}
+            github={'https://github.com/mar69287/Eventiva'}
+            link={''}
+          />
+        </Grid>
+      </Box>
     </Box>
   );
 }
