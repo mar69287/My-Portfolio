@@ -52,8 +52,8 @@ const Contact = () => {
         pb={5}
         pt={{base: 5, lg: 0}}
       >
-        <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={.8}>
-          Locating me is a breeze!
+        <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
+          Want to work together or just say hi? <br /> Locating me is a breeze!
         </Text>
         <Box w={{base: '40%'}} border={'1px solid black'} my={6}/>
         <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 7}}>

@@ -27,12 +27,23 @@ const Projects = () => {
       // px={{base: '5', lg: '0'}}
     >
       <Headers left={'select'} right={'work'} />
+      <VStack
+        alignItems={'center'}
+        px={2}
+        pb={5}
+        pt={{base: 5, lg: 0}}
+      >
+        <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
+        Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
+        </Text>
+        <Box w={{base: '40%'}} border={'1px solid black'} my={6}/>
+      </VStack>
       <Grid 
          width={{base: '100%', '2xl': '1400px'}} m='0 auto'
          templateColumns={{ base: "1fr", md: "1fr 1fr"}}
          gap={{base: 5, md: 3}}
          px={2} 
-         pt={{base: 5, lg: 0}}
+        //  pt={{base: 5, lg: 0}}
       >
         <Card
           title="DevConnect"
