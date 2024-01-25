@@ -1,11 +1,10 @@
 import { Box, Heading } from '@chakra-ui/react'
 import Background from './Background'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const SplashPage = () => {
 
   return (
-    <AnimatePresence>
         <Box
             position={'relative'}
             color={'#fff'}
@@ -99,15 +98,12 @@ const SplashPage = () => {
                     <Heading
                         size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
                         as={motion.heading}
-                        initial={{
-                            x:-30,
-                        }}
                         animate={{
-                            x: 0,
                             transition: {
                                 delay: 3,
-                                duration: .5,
-                            }
+                            },
+                            x: [-40, 0, 0,],
+                            opacity: [1, 1, 0]
                         }}
                     >
                         M
@@ -115,15 +111,12 @@ const SplashPage = () => {
                     <Heading
                         size={{ base: '2xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
                         as={motion.heading}
-                        initial={{
-                            x:30,
-                        }}
                         animate={{
-                            x: 0,
                             transition: {
                                 delay: 3,
-                                duration: .5,
-                            }
+                            },
+                            x: [40, 0, 0,],
+                            opacity: [1, 1, 0]
                         }}
                     >
                         R
@@ -131,7 +124,6 @@ const SplashPage = () => {
                 </Box>
             </Box>
         </Box>
-    </AnimatePresence>
   )
 }
 
@@ -142,8 +134,9 @@ const boxVariant = {
             opacity: 0,
             scale: 0,
             transition: {
-                when: "beforeChildren",
+                when: "afterChildren",
                 staggerChildren: 0.3,
+                duration: 1
             },
     },
     visible: {
@@ -152,6 +145,7 @@ const boxVariant = {
             transition: {
                 when: "beforeChildren",
                 staggerChildren: 0.3,
+                duration: .3
             },
     },
 }
