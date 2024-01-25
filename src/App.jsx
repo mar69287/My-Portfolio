@@ -16,7 +16,7 @@ function App() {
     const changeStatus = () => {
       setTimeout(() => {
         setShowSplash(false);
-      }, 3400);
+      }, 3800);
     }
     changeStatus()
   }, []);
@@ -24,11 +24,11 @@ function App() {
   return (
     <Box className='container' h={'100vh'}>
       {showSplash ? (
-        <SplashPage />
+          <SplashPage />
       ) : (
         <>
-        <Navbar setSelected={setSelected} selected={selected}/>
-        {Sections[selected].Feature}
+          <Navbar setSelected={setSelected} selected={selected}/>
+          {Sections[selected].Feature}
         </>
       )}
       
