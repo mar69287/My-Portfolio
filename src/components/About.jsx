@@ -66,8 +66,8 @@ const About = () => {
                 border={'1px solid RGBA(0, 0, 0, 0.64)'}
                 p={2}
                 _hover={{
-                  color: "#00989D", 
-                  transition: "color 0.3s ease",
+                  color: "#e31b60", 
+                  transition: "color .4s ease",
                 }}
               >
                 <FiGithub />
@@ -82,8 +82,8 @@ const About = () => {
                 border={'1px solid RGBA(0, 0, 0, 0.64)'}
                 p={2}
                 _hover={{
-                  color: "#00989D", 
-                  transition: "color 0.3s ease",
+                  color: "#e31b60", 
+                  transition: "color 0.4s ease",
                 }}
               >
                 <FaLinkedinIn />
@@ -98,8 +98,8 @@ const About = () => {
                 border={'1px solid RGBA(0, 0, 0, 0.64)'}
                 p={2}
                 _hover={{
-                  color: "#00989D", 
-                  transition: "color 0.3s ease",
+                  color: "#e31b60", 
+                  transition: "color 0.4s ease",
                 }}
               >
                 <AiOutlineMail />
