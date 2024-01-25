@@ -1,35 +1,10 @@
-import { Box, Divider, HStack, Heading, Hide, Image, Show, Text, VStack } from '@chakra-ui/react';
+import { Box, HStack, Heading, Image, VStack } from '@chakra-ui/react';
 import waves from '../assets/layer-1.png';
-import { MdArrowForward } from 'react-icons/md'; 
-import { Link } from 'react-scroll'
-import './hero.css'
-import { useRef, useEffect } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion'
+import "./hero.css"
+import { motion, AnimatePresence } from 'framer-motion'
 import Background from './Background';
 
-const AnimatedHeading = motion(Heading);
-const AnimatedBox = motion(Box);
-const AnimatedStack = motion(HStack);
-
 const Hero = () => {
-  const heroRef = useRef(null);
-  const isInView = useInView(heroRef, {once: 'true'});
-  const mainControls = useAnimation();
-
-  const variants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  useEffect(() => {
-    if (isInView) 
-    {
-      mainControls.start('visible')
-    }
-
-  }, [isInView])
-
-  
 
   return (
     <Box
@@ -46,53 +21,87 @@ const Hero = () => {
         />
       </Box>
       <Background />
-      <Box
-         position="absolute" gap={0} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'}  alignItems={'center'}
-         h={'10rem'} w={{base: '100%', lg: '1000px', '2xl': '1400px'}} justifyContent={'center'} display={'flex'}
-         px={1}
-      >
-        <VStack
-          alignItems={'start'} gap={0}
-          h={'max-content'} w={'max-content'}
+      <AnimatePresence>
+        <Box
+           position="absolute" gap={0} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'}  alignItems={'center'}
+           h={'10rem'} w={'max-content'} justifyContent={'center'} display={'flex'}
+           px={1}
+           as={motion.div} variants={boxVariant} animate='visible' initial='hidden' whileHover="hover" 
         >
-          <Heading
-            size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'thin'} color={'#fff'}
-            ml={1}
+          <VStack
+            alignItems={'start'} gap={0}
+            h={'max-content'} w={'max-content'}
           >
-            Software
-          </Heading>
-          <HStack justifyContent={'start'} alignItems={'end'} gap={0}>
+
+            <WordShift word1={'Software'} word2={'Mechanical'}/>
+            <HStack justifyContent={'start'} alignItems={'end'} gap={0}>
+              <Heading
+                size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
+                m={0}
+                style={{lineHeight: '.8'}}
+              >
+                Engineer
+              </Heading>
+              <Heading
+                size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'normal'} color={'#fff'}
+                ml={1}
+              >
+                &
+              </Heading>
+            </HStack>
+            <WordShift word1={'Full-Stack'} word2={'Web'}/>
             <Heading
-              size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
-              m={0}
-              style={{lineHeight: '.8'}}
-            >
-              Engineer
-            </Heading>
-            <Heading
-              size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'normal'} color={'#fff'}
-              ml={1}
-            >
-              &
-            </Heading>
-          </HStack>
-          <Heading
-            size={{ base: 'sm', md: 'md' }} textAlign={'left'} fontWeight={'thin'} color={'#fff'}
-            ml={1}
-          >
-            Full-Stack
-          </Heading>
-          <Heading
-              size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
-              m={0}
-              style={{lineHeight: '.8'}}
-            >
-              Developer
-            </Heading>
-        </VStack>
-      </Box>
+                size={{ base: '3xl', sm:'3xl', md: '3xl', lg: '4xl' }} textAlign={'center'} fontWeight={'normal'} color={'#fff'} textTransform={'uppercase'}
+                m={0}
+                style={{lineHeight: '.8'}}
+              >
+                Developer
+              </Heading>
+          </VStack>
+        </Box>
+      </AnimatePresence>
     </Box>
   );
 };
 
 export default Hero;
+
+const WordShift = ({ word1, word2 }) => {
+  return (
+    <Box 
+      h={{base: '16px', md: '23px', lg:'23px'}} display={'inline-block'} overflow={'hidden'} lineHeight={1.1}
+      fontSize={{ base: 'sm', md: 'xl' }} ml={1} textAlign={'left'} fontWeight={'thin'} color={'#fff'} fontFamily={'Roboto, sans-serif'}
+    >
+      <Box
+        as={motion.div}
+        display={'flex'} flexDirection={'column'} 
+        initial={{
+          y: "0%",
+        }}
+        variants={{
+          hover: {
+            y: "-50%",
+          },
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+      >
+        <Box>{word1}</Box>
+        <Box>{word2}</Box>
+      </Box>
+    </Box>
+  )
+}
+
+const boxVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: .5
+    },
+  },
+}

@@ -12,7 +12,7 @@ const Navbar = ({ setSelected, selected }) => {
                 <Box
                         as={motion.div}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1, transition: {duration: .5, delay: 1.4} }}
+                        animate={{ opacity: 1, transition: {duration: .5, delay: .5} }}
                 >
                         MR
                 </Box>
@@ -39,17 +39,15 @@ const Navbar = ({ setSelected, selected }) => {
                                                 onClick={() => setSelected(index)}
                                         >
                                                 {selected === index ? (
-                                                        <AnimatePresence>
-                                                                <Box
-                                                                        as={motion.div}
-                                                                        initial={{ scale: 0, }}
-                                                                        animate={{ scale: 1, transition: { delay: 0.0 } }}
-                                                                        exit={{ scale: 0}}
-                                                                        fontSize={'8px'}
-                                                                >
-                                                                        <FaCircle/>
-                                                                </Box>
-                                                        </AnimatePresence>
+                                                        <Box
+                                                                as={motion.div}
+                                                                initial={{ scale: 0, }}
+                                                                animate={{ scale: 1, transition: { delay: 0.0 } }}
+                                                                exit={{ scale: 0}}
+                                                                fontSize={'8px'}
+                                                        >
+                                                                <FaCircle/>
+                                                        </Box>
                                                 ) : (
                                                         name
                                                 )}
@@ -66,13 +64,17 @@ export default Navbar
 
 const boxVariant = {
         hidden: {
+                opacity: 0,
                 transition: {
-                staggerChildren: 1,
+                        staggerChildren: 1,
                 }
         },
         visible: {
+                opacity: 1,
                 transition: {
-                staggerChildren: .4,
+                        staggerChildren: .4,
+                        delay: .7,
+                        when: "beforeChildren",
                 },
         },
 }
