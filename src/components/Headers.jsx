@@ -6,7 +6,7 @@ const Headers = ({ left, right}) => {
     <AnimatePresence>
         <Box
             w={'full'} display={'flex'} justifyContent={'center'} alignItems={'center'} gap={3}
-            mb={{base: 1, md: 7, lg: 10}}
+            mb={{base: 1, md: 7, lg: 10}} color={'#fff'}
         >
             <Heading
                 as={motion.div}

@@ -1,4 +1,4 @@
-import { HStack, Box } from '@chakra-ui/react';
+import { HStack, Box, Flex, Button } from '@chakra-ui/react';
 import './Navbar.css';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FaCircle } from "react-icons/fa";
@@ -7,8 +7,9 @@ const Navbar = ({ setSelected, selected }) => {
   const sectionNames = ['Home', 'About', 'Projects', 'Contact'];
   
   return (
-    <AnimatePresence>
-            <HStack as={'nav'} color={selected === 0 ? '#f5f5f5' : '#000'} h={{base:'3.2rem', lg: '4rem'}} fontSize={{base: 'md', md: 'lg'}} justifyContent={'space-between'} gap={2} bgColor={selected === 0 ? 'rgba(0, 0, 0, 0.2)': 'rgba(255, 255, 255, 0.5)'} w={'full'} zIndex={20} position={'fixed'} left={'50%'} transform={'translateX(-50%)'} top={'0'} p={".7rem 1.7rem"}  backdropBlur={'15px'}>
+            <HStack as={'nav'} color={'#f5f5f5'} h={{base:'3.2rem', lg: '4rem'}} fontSize={{base: 'md', md: 'lg'}} justifyContent={'space-between'} gap={2} 
+                bgColor={'rgba(0, 0, 0, 0.2)'} w={'full'} zIndex={20} position={'fixed'} left={'50%'} transform={'translateX(-50%)'} top={'0'} p={".7rem 1.7rem"}  backdropBlur={'15px'}
+            >
                 <Box
                         as={motion.div}
                         initial={{ opacity: 0 }}
@@ -16,51 +17,111 @@ const Navbar = ({ setSelected, selected }) => {
                 >
                         MR
                 </Box>
-                <Box 
-                        flex={1} display={'flex'} justifyContent={'end'} alignItems={'center'} gap={2}
+                <Tabs selected={selected} setSelected={setSelected} sectionNames={sectionNames} />
+                {/* <Box 
+                        flex={1} display={'flex'} justifyContent={'end'} alignItems={'center'}
                         as={motion.div}
                         variants={boxVariant}
                         animate='visible'
                         initial='hidden'
                 >
-                        {sectionNames.map((name, index) => {
-                                return (
-                                        <Box
-                                                as={motion.div}
-                                                key={index}
-                                                variants={listVariant}
-                                                whileHover={
-                                                        selected === index
-                                                          ? { scale: 1, opacity: 1 }
-                                                          : { scale: 1.1, opacity: 0.7 }
-                                                      }
-                                                w={'max-content'} display={'flex'} justifyContent={'center'} alignItems={'center'}
-                                                cursor={'pointer'}
-                                                onClick={() => setSelected(index)}
-                                        >
-                                                {selected === index ? (
+                        <AnimatePresence>
+                                {sectionNames.map((name, index) => {
+                                        return (
+                                                <Box
+                                                        as={motion.div}
+                                                        variants={listVariant}
+                                                        key={index}
+                                                        // whileHover={
+                                                        //         selected === index
+                                                        //           ? { scale: 1, opacity: 1 }
+                                                        //           : { scale: 1.1, opacity: 0.7 }
+                                                        //       }
+                                                        // w={'max-content'} display={'flex'} justifyContent={'center'} alignItems={'center'}
+                                                        // onClick={() => setSelected(index)}
+                                                        // cursor={selected !== index ? 'pointer' : 'default'}
+                                                        // color={selected === index ? '#f5f5f5' : 'rgba(245, 245, 245, 0.4)'}
+                                                        pos={'relative'}
+                                                        // px={2}
+                                                        // py={1}
+                                                >
+                                                        {name}
                                                         <Box
                                                                 as={motion.div}
-                                                                initial={{ scale: 0, }}
-                                                                animate={{ scale: 1, transition: { delay: 0.0 } }}
-                                                                exit={{ scale: 0}}
-                                                                fontSize={'8px'}
-                                                        >
-                                                                <FaCircle/>
-                                                        </Box>
-                                                ) : (
-                                                        name
-                                                )}
-                                        </Box>
-                                )
-                        })}
-                </Box>
+                                                                layoutId="tabs-features-underline"
+                                                                bg={'white'}
+                                                                h={1}
+                                                                pos={'absolute'} bottom={0} left={0} right={0} zIndex={10}
+                                                        />
+                                                </Box>
+                                        )
+                                })}
+                        </AnimatePresence>
+                </Box> */}
             </HStack>
-    </AnimatePresence>
   )
 }
 
 export default Navbar
+
+const Tabs  = ({ selected, setSelected, sectionNames }) => {
+        return (
+                <Flex
+                        as={motion.div}
+                        variants={boxVariant}
+                        animate='visible'
+                        initial='hidden' gap={0}
+                >
+                        <AnimatePresence>
+                                {sectionNames.map((name, index) => {
+                                        return (
+                                                <Tab
+                                                        key={index}
+                                                        setSelected={setSelected}
+                                                        selected={selected === index}
+                                                        name={name}
+                                                        tabNum={index}
+                                                />
+                                        )
+                                })}
+                        </AnimatePresence>
+                </Flex>
+        )
+}
+
+const Tab = ({ setSelected, selected, name, tabNum}) => {
+        return (
+                <Box
+                        color={'white'} pos={'relative'} w={'full'}
+                        as={motion.div}
+                        variants={listVariant}
+                >       
+                        <Box
+                                rounded={0}
+                                px={{base: '3px', sm: 1}}
+                                color={'white'} pos={'relative'} w={'full'} borderBottom={'2px solid rgba(245, 245, 245, 0.7)'}
+                                display={'flex'} justifyContent={'center'} alignItems={'center'}
+                                onClick={() => setSelected(tabNum)}
+                                cursor={selected ? 'default' : 'pointer'}
+                        >
+                                <Box
+                                        color={selected ? 'white' : 'rgba(245, 245, 245, 0.7)'}
+                                        _hover={{ color: selected ? 'white' : '#e31b60', transition: 'all 0.4s ease' }}
+                                >
+                                        {name}
+                                </Box>
+                        </Box>
+                        {selected && 
+                                <Box 
+                                        as={motion.span}
+                                        layoutId="tabs-underline"
+                                        pos={'absolute'} bottom={0} left={0} right={0} zIndex={15}
+                                        h={'2px'} bg={'white'}
+                                />
+                        }
+                </Box>
+        )
+}
 
 const boxVariant = {
         hidden: {
