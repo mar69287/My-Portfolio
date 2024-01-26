@@ -6,6 +6,7 @@ import framer from '../assets/framer-motion.svg'
 import python from '../assets/python.svg'
 import photoshop from '../assets/photoshop.svg'
 import react from '../assets/react.svg'
+import vite from '../assets/vitejs.svg'
 import { Box, Img } from '@chakra-ui/react'
 import HoverTag from './HoverTag'
 
@@ -73,6 +74,10 @@ const Skills = () => {
         <Box as={motion.div} whileHover="hover" cursor={'pointer'}  fontSize={'2.1rem'} color={'#F6AD55'} h={'2,2rem'} w={'2.2rem'} justifyContent={'center'} alignItems={'center'} display={'flex'}>
             <SiAmazonaws />
             <HoverTag name={'AWS'} />
+        </Box>
+        <Box as={motion.div} whileHover="hover" cursor={'pointer'}  h={'2,2rem'} w={'2.2rem'} justifyContent={'center'} alignItems={'center'} display={'flex'}>
+            <Img h={'2rem'} w={'2rem'} src={vite} />
+            <HoverTag name={'Vite'} />
         </Box>
     </>
   )
