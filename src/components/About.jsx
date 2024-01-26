@@ -1,6 +1,6 @@
 import { Box, Grid, GridItem, HStack, Image, VStack, Link, Text } from "@chakra-ui/react";
 import profile from "../assets/portfolio.png"
-import { AiOutlineMail } from 'react-icons/ai'
+import { AiOutlineMail, AiOutlineDownload } from 'react-icons/ai'
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import resume from '../assets/Marco-Software-Resume.pdf'
@@ -57,7 +57,7 @@ const About = () => {
                 </Text>
               </VStack>
             </Box>
-            <HStack justifyContent={'center'} alignItems={'center'} gap={10}>
+            <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 4, md: 10}} mt={3}>
               <Link 
                 href="https://github.com/mar69287" 
                 isExternal 
@@ -115,15 +115,36 @@ const About = () => {
                 <HoverTag name={'Email'} />
                 <AiOutlineMail />
               </Link>
+              <Link
+              href={resume}
+              isExternal
+              color={'#fff'}
+              fontSize={{base: '1rem', lg: '1.2rem'}}
+              borderRadius={'full'}
+              bg={'rgba(97, 97, 97, 0.9)'}
+              border={'1px solid rgba(255, 255, 255, .1)'}
+              p={2}
+              py={1}
+              _hover={{
+                color: "#e31b60",
+                transition: "color 0.3s ease",
+              }}
+              pos={'relative'}
+              as={motion.a} whileHover="hover" cursor={'pointer'}
+              display={'flex'} justifyContent={'center'} alignItems={'center'} gap={1}
+            >
+              Resume
+              <AiOutlineDownload />
+            </Link>
             </HStack>
-            <Link isExternal href={resume} color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
+            {/* <Link isExternal href={resume} color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
                 <HStack mt={0} className='btn' w={'max-content'} as={motion.div} whileHover={{scale:1.02}} whileTap={{scale:.9}} >
                     <Text fontSize={'2xl'} fontWeight={'semibold'} >
                       Resume
                     </Text>
                     <MdArrowForward className="arrow-icon"/>
                 </HStack>
-            </Link>
+            </Link> */}
           </VStack>
         </GridItem>
         <GridItem colSpan={{ base: 1, lg: 4 }} pl={{base: 5, lg: 20}} pr={{base: 5, lg: 10}} py={{base: 5, lg: '3.5rem'}} >
