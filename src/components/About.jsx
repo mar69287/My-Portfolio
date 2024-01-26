@@ -8,6 +8,7 @@ import { MdArrowForward } from 'react-icons/md';
 import { motion } from 'framer-motion'
 import Headers from "./Headers";
 import Skills from "./Skills";
+import HoverTag from "./HoverTag";
 
 const AnimatedGrid = motion(Grid);
 
@@ -70,7 +71,10 @@ const About = () => {
                   color: "#e31b60", 
                   transition: "color .4s ease",
                 }}
+                as={motion.a} whileHover="hover" cursor={'pointer'}
+                display={'flex'} justifyContent={'center'} alignItems={'center'}
               >
+                <HoverTag name={'Github'} />
                 <FiGithub />
               </Link>
               <Link 
@@ -86,7 +90,10 @@ const About = () => {
                   color: "#e31b60", 
                   transition: "color 0.4s ease",
                 }}
+                as={motion.a} whileHover="hover" cursor={'pointer'}
+                display={'flex'} justifyContent={'center'} alignItems={'center'}
               >
+                <HoverTag name={'LinkedIn'} />
                 <FaLinkedinIn />
               </Link>
               <Link 
@@ -102,7 +109,10 @@ const About = () => {
                   color: "#e31b60", 
                   transition: "color 0.4s ease",
                 }}
+                as={motion.a} whileHover="hover" cursor={'pointer'}
+                display={'flex'} justifyContent={'center'} alignItems={'center'}
               >
+                <HoverTag name={'Email'} />
                 <AiOutlineMail />
               </Link>
             </HStack>

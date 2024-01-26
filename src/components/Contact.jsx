@@ -75,7 +75,10 @@ const Contact = () => {
                 color: "#e31b60",
                 transition: "color 0.3s ease",
               }}
+              as={motion.a} whileHover="hover" cursor={'pointer'}
+              display={'flex'} justifyContent={'center'} alignItems={'center'}
             >
+              <HoverTag name={'Github'} />
               <FiGithub />
             </Link>
             <Link
@@ -91,7 +94,10 @@ const Contact = () => {
                 color: "#e31b60",
                 transition: "color 0.3s ease",
               }}
+              as={motion.a} whileHover="hover" cursor={'pointer'}
+              display={'flex'} justifyContent={'center'} alignItems={'center'}
             >
+              <HoverTag name={'LinkedIn'} />
               <FaLinkedinIn />
             </Link>
             <Link
@@ -107,7 +113,10 @@ const Contact = () => {
                 color: "#e31b60",
                 transition: "color 0.3s ease",
               }}
+              as={motion.a} whileHover="hover" cursor={'pointer'}
+              display={'flex'} justifyContent={'center'} alignItems={'center'}
             >
+              <HoverTag name={'Email'} />
               <AiOutlineMail />
             </Link>
             <Link
