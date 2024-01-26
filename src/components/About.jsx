@@ -131,13 +131,13 @@ const About = () => {
                 <Text color={'#fff'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'}>
                   My Background
                 </Text>
-                <Text color={'#b9b9b9'} fontSize={"2xl"} mt={1}>
+                <Text color={'#b9b9b9'} fontSize={"xl"} mt={1}>
                   I am a first-generation college graduate with a degree in <span style={{color: '#fff'}}>Mechanical Engineering</span>. My academic journey sparked an interest in coding, prompting me to direct my determination towards
                   a career in <span style={{color: '#fff'}}>web development</span>. I&apos;ve since explored a diverse tech stack and successfully applied it in creating projects that I take great pride in. Through this journey, I&apos;ve demonstrated 
                   the ability to <span style={{color: '#fff'}}>swiftly acquire</span> and <span style={{color: '#fff'}}>apply new skills</span>, which has instilled in me a sense of accomplishment and a thirst for <span style={{color: '#fff'}}>continuous learning</span>. Therefore, I&apos;m eager to keep growing and contribute
                   to more fulfilling projects whose <span style={{color: '#fff'}}>solutions make a lasting impact</span>. 
                 </Text>
-                <Text color={'#b9b9b9'} fontSize={"2xl"} mt={1}>
+                <Text color={'#b9b9b9'} fontSize={"xl"} mt={1}>
                   Aside from programming, I love the outdoors–from camping in Sequoia or snowboarding in Big Bear with friends to taking a drive with my beautiful dog. When I’m not outside, I’m watching my favorite sports 
                   team FC Barcelona. Visca Barca!
                 </Text>
