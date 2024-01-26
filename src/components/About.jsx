@@ -128,15 +128,18 @@ const About = () => {
         </GridItem>
         <GridItem colSpan={{ base: 1, lg: 4 }} pl={{base: 5, lg: 20}} pr={{base: 5, lg: 10}} py={{base: 5, lg: '3.5rem'}} >
             <VStack justifyContent={'center'} alignItems={'flex-start'}>
-                <Text color={'#b9b9b9'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'}>
+                <Text color={'#fff'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'}>
                   My Background
                 </Text>
-                <Text color={'#fff'} fontSize={"2xl"} mt={1}>
-                  I am a former Mechanical Engineer turned Developer. I have found a passion for both the precision of engineering and the artistry of coding, one that drives me to create cohesive,
-                  scalable, and user-friendly applications.  
+                <Text color={'#b9b9b9'} fontSize={"2xl"} mt={1}>
+                  I am a first-generation college graduate with a degree in <span style={{color: '#fff'}}>Mechanical Engineering</span>. My academic journey sparked an interest in coding, prompting me to direct my determination towards
+                  a career in <span style={{color: '#fff'}}>web development</span>. I&apos;ve since explored a diverse tech stack and successfully applied it in creating projects that I take great pride in. Through this journey, I&apos;ve demonstrated 
+                  the ability to <span style={{color: '#fff'}}>swiftly acquire</span> and <span style={{color: '#fff'}}>apply new skills</span>, which has instilled in me a sense of accomplishment and a thirst for <span style={{color: '#fff'}}>continuous learning</span>. Therefore, I&apos;m eager to keep growing and contribute
+                  to more fulfilling projects whose <span style={{color: '#fff'}}>solutions make a lasting impact</span>. 
                 </Text>
-                <Text color={'#fff'} fontSize={"2xl"} mt={1}>
-                  Outside of programming, I love the outdoors. From camping, to playing sports, to just taking a drive with my beautiful dog. My favorite sports team is FC Barcelona. Visca Barca!
+                <Text color={'#b9b9b9'} fontSize={"2xl"} mt={1}>
+                  Aside from programming, I love the outdoors–from camping in Sequoia or snowboarding in Big Bear with friends to taking a drive with my beautiful dog. When I’m not outside, I’m watching my favorite sports 
+                  team FC Barcelona. Visca Barca!
                 </Text>
             </VStack> 
         </GridItem>
@@ -151,7 +154,7 @@ const About = () => {
             <FrontSkills />
             <FrontSkills />
           </HStack> */}
-          <Text color={'#b9b9b9'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'} mb={2}>
+          <Text color={'#fff'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'} mb={2}>
             Tool Stack
           </Text>
           <HStack flexWrap={'wrap'} justifyContent={'start'} alignItems={'center'} gap={3}>
@@ -169,13 +172,13 @@ const About = () => {
             <BackSkills />
             <BackSkills />
           </HStack> */}
-          <Text color={'#b9b9b9'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'} mb={1}>
+          <Text color={'#fff'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'} mb={1}>
             Education
           </Text>
           <VStack justifyContent={'start'} alignItems={'start'}>
             <HStack w={'full'} alignItems={'start'}>
               <Box w={'7rem'}>
-                <Text>2023</Text>
+                <Text color={'#b9b9b9'}>2023</Text>
               </Box>
               <Box w={'full'} gap={0}>
                 <Text >Software Engineering</Text>
@@ -184,7 +187,7 @@ const About = () => {
             </HStack>
             <HStack w={'full'} alignItems={'start'}>
               <Box w={'7rem'}>
-                <Text>2022</Text>
+                <Text color={'#b9b9b9'}>2022</Text>
               </Box>
               <Box w={'full'}>
                 <Text>B.S. Mechanical Engineering</Text>
