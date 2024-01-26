@@ -131,7 +131,7 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
             </Box>
           }
           <Link isExternal href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
-              <HStack mt={0} className='btn' w={'max-content'} as={motion.div} whileHover={{scale:1.02}} whileTap={{scale:.9}} >
+              <HStack mt={0} className='btn' w={'max-content'} >
                   <Text fontSize={{base: 'md', md: 'lg'}}  fontWeight={'semibold'} >
                       More Details
                   </Text>
