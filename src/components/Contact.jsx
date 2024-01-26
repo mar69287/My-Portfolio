@@ -60,7 +60,7 @@ const Contact = () => {
         <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
           Want to work together or just say hi? <br /> Locating me is a breeze!
         </Text>
-        <Box w={{base: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
+        <Box w={{base: '60%', sm: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
         <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 7}}>
           <Link 
             href="https://github.com/mar69287" 

@@ -36,7 +36,7 @@ const Projects = () => {
           <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'} color={'#fff'}>
             Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
           </Text>
-          <Box w={{base: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
+          <Box w={{base: '60%', sm: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
         </VStack>
         <Grid
            width={{base: '100%', '2xl': '1400px'}} m='0 auto'

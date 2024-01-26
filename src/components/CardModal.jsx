@@ -24,7 +24,7 @@ const CardModal = ({ isOpen, setIsOpen, title, description, tools, img, github, 
                     {title} <FiArrowUpRight/>
                 </Link>
             )}
-            <Box w={{base:'33%', sm: '20%'}} my={5} border={'1px solid rgb(33, 36, 46)'}/>
+            <Box w={{base:'60%', sm: '40%'}} my={5} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'}/>
           </ModalHeader>
           <ModalBody pt={0} pb={10}>
             <Stack direction={['column' ]} spacing='24px'>
