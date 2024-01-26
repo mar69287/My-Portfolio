@@ -57,7 +57,7 @@ const About = () => {
                 </Text>
               </VStack>
             </Box>
-            <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 4, md: 10}} mt={3}>
+            <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 4, md: 7}} mt={3}>
               <Link 
                 href="https://github.com/mar69287" 
                 isExternal 
