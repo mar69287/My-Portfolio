@@ -7,6 +7,7 @@ import Headers from "./Headers";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
+import HoverTag from "./HoverTag";
 
 const Contact = () => {
   const form = useRef();
@@ -123,7 +124,11 @@ const Contact = () => {
               color: "#e31b60", 
               transition: "color 0.3s ease",
             }}
+            pos={'relative'}
+            as={motion.a} whileHover="hover" cursor={'pointer'}
+            display={'flex'} justifyContent={'center'} alignItems={'center'}
           >
+            <HoverTag name={'Resume'} />
             <AiOutlineDownload />
           </Link>
         </HStack>
