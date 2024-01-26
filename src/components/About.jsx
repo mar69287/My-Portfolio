@@ -15,17 +15,18 @@ const About = () => {
 
   return (
     <Box  
-      bgColor={"#000"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} m='0 auto' pt={{base:20, lg: 24}}
+      bgColor={"#000"} id="about" minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:20, lg: 24}}
     >
       <Headers left={'about'} right={'me'} />
       <AnimatedGrid
         templateColumns={{ base: "1fr", md: '1fr 1fr', lg: "repeat(6, 1fr)" }} 
         gap={0} 
         borderTop={{base: 'none', md: '2px solid #ddd'}}
-        mx={{base: 0, lg: 20}}
+        mx={{base: 0, lg: 0}}
         mb={20}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
+        width={{xl: '100%', '2xl': '1400px'}}
       >
         <GridItem colSpan={{ base: 1, lg: 2 }} borderRight={{base: 'none', md: '2px solid #ddd'}}>
           <VStack pt={{base: 5, lg: 10}} px={{base: 5}} pb={5} >
