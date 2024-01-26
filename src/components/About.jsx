@@ -15,7 +15,7 @@ const About = () => {
 
   return (
     <Box  
-      bgColor={"#fff"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} m='0 auto' pt={{base:20, lg: 24}}
+      bgColor={"#000"} id="about" width={{xl: '100%', '2xl': '1400px'}} minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} m='0 auto' pt={{base:20, lg: 24}}
     >
       <Headers left={'about'} right={'me'} />
       <AnimatedGrid
@@ -41,7 +41,7 @@ const About = () => {
                 w={'full'}
                 position={'absolute'}
                 bottom={0} p={2}
-                zIndex={3} color={'black'}
+                zIndex={3} color={'#fff'}
                 justifyContent={'center'}
                 alignItems={'start'}
                 gap={1}
@@ -63,7 +63,7 @@ const About = () => {
                 fontSize={{base: '1.1rem', lg: '1.2rem'}}
                 borderRadius={'full'}
                 bg={'rgba(97, 97, 97, 0.9)'}
-                border={'1px solid RGBA(0, 0, 0, 0.64)'}
+                border={'1px solid rgba(255, 255, 255, .1)'}
                 p={2}
                 _hover={{
                   color: "#e31b60", 
@@ -79,7 +79,7 @@ const About = () => {
                 fontSize={{base: '1.1rem', lg: '1.2rem'}}
                 borderRadius={'full'}
                 bg={'rgba(97, 97, 97, 0.9)'}
-                border={'1px solid RGBA(0, 0, 0, 0.64)'}
+                border={'1px solid rgba(255, 255, 255, .1)'}
                 p={2}
                 _hover={{
                   color: "#e31b60", 
@@ -95,7 +95,7 @@ const About = () => {
                 fontSize={{base: '1.1rem', lg: '1.2rem'}}
                 borderRadius={'full'}
                 bg={'rgba(97, 97, 97, 0.9)'}
-                border={'1px solid RGBA(0, 0, 0, 0.64)'}
+                border={'1px solid rgba(255, 255, 255, .1)'}
                 p={2}
                 _hover={{
                   color: "#e31b60", 
@@ -105,9 +105,11 @@ const About = () => {
                 <AiOutlineMail />
               </Link>
             </HStack>
-            <Link isExternal href={resume} _hover={{ textDecoration: 'none' }}>
-                <HStack mt={0} className='btn' w={'max-content'}>
-                    <Text fontSize={'2xl'} fontWeight={'semibold'}>Resume</Text>
+            <Link isExternal href={resume} color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
+                <HStack mt={0} className='btn' w={'max-content'} as={motion.div} whileHover={{scale:1.02}} whileTap={{scale:.9}} >
+                    <Text fontSize={'2xl'} fontWeight={'semibold'} >
+                      Resume
+                    </Text>
                     <MdArrowForward className="arrow-icon"/>
                 </HStack>
             </Link>
@@ -118,11 +120,11 @@ const About = () => {
                 <Text color={'#b9b9b9'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'}>
                   My Background
                 </Text>
-                <Text color={'rgb(33, 36, 46)'} fontSize={"2xl"} mt={1}>
+                <Text color={'#fff'} fontSize={"2xl"} mt={1}>
                   I am a former Mechanical Engineer turned Developer. I have found a passion for both the precision of engineering and the artistry of coding, one that drives me to create cohesive,
                   scalable, and user-friendly applications.  
                 </Text>
-                <Text color={'rgb(33, 36, 46)'} fontSize={"2xl"} mt={1}>
+                <Text color={'#fff'} fontSize={"2xl"} mt={1}>
                   Outside of programming, I love the outdoors. From camping, to playing sports, to just taking a drive with my beautiful dog. My favorite sports team is FC Barcelona. Visca Barca!
                 </Text>
             </VStack> 
@@ -145,7 +147,7 @@ const About = () => {
             <Skills />
           </HStack>
         </GridItem>
-        <GridItem colSpan={{ base: 1, lg: 3 }} className="logos" borderTop={{base: 'none', md: '2px solid #ddd'}} p={{base: 5, lg: '3.5rem'}}>
+        <GridItem color={'#fff'} colSpan={{ base: 1, lg: 3 }} className="logos" borderTop={{base: 'none', md: '2px solid #ddd'}} p={{base: 5, lg: '3.5rem'}}>
           {/* <HStack h={'100%'}>
             <HStack whiteSpace={'nowrap'} h={'100%'} backgroundColor={'white'} position={"relative"} zIndex={4} justifyContent={'space-between'} alignItems={'center'} pr={3} borderRight={'2px solid #ddd'}>
               <Heading w={{base: '6rem', lg:'10rem'}} color={'rgb(33, 36, 46)'} size={{base: 'md', lg: 'lg'}} >

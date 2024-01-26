@@ -7,7 +7,7 @@ const CardModal = ({ isOpen, setIsOpen, title, description, tools, img, github, 
   return (
     <Modal isOpen={isOpen} size={{base:'full', md: 'xl'}} onClose={()=> setIsOpen(false)}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent bg={'rgb(10, 10, 10)'} color={'#fff'} border={'1px solid rgba(255, 255, 255, .2)'}>
           <ModalCloseButton onClick={() => setIsOpen(false)} />
           <ModalHeader
             pb={1}
@@ -16,7 +16,7 @@ const CardModal = ({ isOpen, setIsOpen, title, description, tools, img, github, 
                 <Heading fontSize={{base: '3xl', sm: '4xl'}} fontWeight={'semibold'}>{title}</Heading>
             ) : (
                 <Link
-                    fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: 'purple', transition: 'all'}}
+                    fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: '#e31b60', transition: 'all 0.4s ease'}}
                     href={link}
                     target="_blank" rel="noopener noreferrer"
                     fontSize={{base: '3xl', sm: '4xl'}} gap={2}
@@ -36,9 +36,9 @@ const CardModal = ({ isOpen, setIsOpen, title, description, tools, img, github, 
                         {tools.map((tool, index) => (
                             <Box
                                 key={index}
-                                borderRadius={'full'} py={2} px={3} bg={'rgba(97, 97, 97, 0.9)'}
+                                borderRadius={'full'} py={2} px={3} bg={'rgba(44, 44, 44, .9)'}
                                 fontSize={{base: 'xs', sm: 'sm'}}
-                                color={'white'}
+                                color={'white'} border={'1px solid rgba(255, 255, 255, .1)'}
                             >
                                 {tool}
                             </Box>
@@ -55,9 +55,11 @@ const CardModal = ({ isOpen, setIsOpen, title, description, tools, img, github, 
                             Still in Progress<FaExclamation/>
                         </Box>
                     }
-                    <Link isExternal target="_blank" rel="noopener noreferrer" href={github}>
-                        <HStack mt={1} className='btn'>
-                            <Text fontSize={{base: 'md', sm: 'lg'}} fontWeight={'semibold'}>More Details</Text>
+                    <Link isExternal href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
+                        <HStack mt={0} className='btn' w={'max-content'}>
+                            <Text fontSize={{base: 'md', md: 'lg'}}  fontWeight={'semibold'} >
+                                More Details
+                            </Text>
                             <MdArrowForward className="arrow-icon"/>
                         </HStack>
                     </Link>

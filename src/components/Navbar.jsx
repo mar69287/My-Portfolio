@@ -1,7 +1,6 @@
-import { HStack, Box, Flex, Button } from '@chakra-ui/react';
+import { HStack, Box, Flex } from '@chakra-ui/react';
 import './Navbar.css';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FaCircle } from "react-icons/fa";
 
 const Navbar = ({ setSelected, selected }) => {
   const sectionNames = ['Home', 'About', 'Projects', 'Contact'];
@@ -18,46 +17,6 @@ const Navbar = ({ setSelected, selected }) => {
                         MR
                 </Box>
                 <Tabs selected={selected} setSelected={setSelected} sectionNames={sectionNames} />
-                {/* <Box 
-                        flex={1} display={'flex'} justifyContent={'end'} alignItems={'center'}
-                        as={motion.div}
-                        variants={boxVariant}
-                        animate='visible'
-                        initial='hidden'
-                >
-                        <AnimatePresence>
-                                {sectionNames.map((name, index) => {
-                                        return (
-                                                <Box
-                                                        as={motion.div}
-                                                        variants={listVariant}
-                                                        key={index}
-                                                        // whileHover={
-                                                        //         selected === index
-                                                        //           ? { scale: 1, opacity: 1 }
-                                                        //           : { scale: 1.1, opacity: 0.7 }
-                                                        //       }
-                                                        // w={'max-content'} display={'flex'} justifyContent={'center'} alignItems={'center'}
-                                                        // onClick={() => setSelected(index)}
-                                                        // cursor={selected !== index ? 'pointer' : 'default'}
-                                                        // color={selected === index ? '#f5f5f5' : 'rgba(245, 245, 245, 0.4)'}
-                                                        pos={'relative'}
-                                                        // px={2}
-                                                        // py={1}
-                                                >
-                                                        {name}
-                                                        <Box
-                                                                as={motion.div}
-                                                                layoutId="tabs-features-underline"
-                                                                bg={'white'}
-                                                                h={1}
-                                                                pos={'absolute'} bottom={0} left={0} right={0} zIndex={10}
-                                                        />
-                                                </Box>
-                                        )
-                                })}
-                        </AnimatePresence>
-                </Box> */}
             </HStack>
   )
 }

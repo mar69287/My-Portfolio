@@ -16,7 +16,7 @@ const Projects = () => {
   return (
     <Box
       minH="100vh"
-      bgColor={"#fff"}
+      bgColor={"#000"}
       py={{base:20, lg: 24}}
       id="projects"
       as="section"
@@ -33,10 +33,10 @@ const Projects = () => {
           pb={5}
           pt={{base: 5, lg: 0}}
         >
-          <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
-          Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
+          <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'} color={'#fff'}>
+            Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
           </Text>
-          <Box w={{base: '40%'}} border={'1px solid black'} my={6}/>
+          <Box w={{base: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
         </VStack>
         <Grid
            width={{base: '100%', '2xl': '1400px'}} m='0 auto'
@@ -88,18 +88,18 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Box as={motion.div} whileHover={"hover"} 
-      w={'full'} h={{base: '200px', sm: '275px', md: '250px', lg: '350px'}} overflow={'hidden'} pos={'relative'} borderRadius={'md'} border={'1px solid #ddd'} color={'white'}
+      w={'full'} h={{base: '200px', sm: '275px', md: '250px', lg: '350px'}}  overflow={'hidden'} pos={'relative'} borderRadius={'md'} border={'1px solid rgba(255, 255, 255, .4)'} color={'white'}
     >
       <Show above="lg">
         <Box
-          h={'full'} p={6} display={'flex'} flexDirection={'column'} justifyContent={'start'} bg={'black'}
+          h={'full'} p={6} display={'flex'} flexDirection={'column'} justifyContent={'start'} bg={'rgb(10, 10, 10)'}
           fontSize={{base: 'xl', md: '2xl', lg: '3xl'}}
         >
           {title === 'Eventiva' ? (
             <Heading fontSize={{base: 'xl', md: '2xl', lg: '3xl'}} fontWeight={'semibold'}>{title}</Heading>
           ) : (
               <Link
-                fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: 'purple', transition: 'all'}}
+                fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: '#e31b60', transition: 'all 0.4s ease'}}
                 href={link}
                 target="_blank" rel="noopener noreferrer"
               >
@@ -114,8 +114,9 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
             {tools.map((tool, index) => (
               <Box
                 key={index}
-                borderRadius={'full'} py={2} px={3} bg={'rgb(50,50,50)'}
+                borderRadius={'full'} py={2} px={3} bg={'rgba(44, 44, 44, .9)'}
                 fontSize={{base: 'xs', md: 'sm'}}
+                border={'1px solid rgba(255, 255, 255, .1)'}
               >
                 {tool}
               </Box>
@@ -124,24 +125,19 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
           {title === 'Eventiva' &&
             <Box
               borderRadius={'full'} py={2} px={3} bg={'rgb(50,50,50)'} display={'flex'} alignItems={'center'} fontSize={{base: 'xs', md: 'sm'}}
-              fontWeight={'bold'} w={'max-content'} mb={2}
+              fontWeight={'bold'} w={'max-content'} mb={2} border={'1px solid rgba(255, 255, 255, .1)'}
             >
               Still in Progress<FaExclamation/>
             </Box>
           }
-          <Box
-            className='flex justify-start items-center gap-2 text-neutral-200 text-sm md:text-md mt-2 hover:text-indigo-500 transition-colors w-max'
-            display={'flex'} justifyContent={'start'} alignItems={'center'} gap={2} fontSize={'sm'} mt={2} _hover={{color: 'purple', transition: 'all'}} w={'max-content'}
-          >
-            <Link href={github} target="_blank" rel="noopener noreferrer"
-              fontSize={{base: 'md', md: 'lg'}}   
-            >
-              <HStack>
-                <Text fontSize={{base: 'md', sm: 'lg'}} fontWeight={'semibold'}>More Details</Text>
-                <MdArrowForward className="arrow-icon"/>
+          <Link isExternal href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
+              <HStack mt={0} className='btn' w={'max-content'} as={motion.div} whileHover={{scale:1.02}} whileTap={{scale:.9}} >
+                  <Text fontSize={{base: 'md', md: 'lg'}}  fontWeight={'semibold'} >
+                      More Details
+                  </Text>
+                  <MdArrowForward className="arrow-icon"/>
               </HStack>
-            </Link>
-          </Box>
+          </Link>
         </Box>
         <Box
           as={motion.div}

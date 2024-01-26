@@ -43,7 +43,7 @@ const Contact = () => {
         as="section"
         pt={{base:20, lg: 24}}
         position={'relative'}
-        minH={'100vh'}
+        minH={'100vh'} bg={'#000'}
         width={{xl: '100%', '2xl': '1000px'}} mx={'auto'}
     >
       <Headers left={'contact'} right={'me'} />
@@ -55,11 +55,12 @@ const Contact = () => {
         as={motion.div}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
+        color={'#fff'}
       >
         <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
           Want to work together or just say hi? <br /> Locating me is a breeze!
         </Text>
-        <Box w={{base: '40%'}} border={'1px solid black'} my={6}/>
+        <Box w={{base: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
         <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 7}}>
           <Link 
             href="https://github.com/mar69287" 
@@ -68,7 +69,7 @@ const Contact = () => {
             fontSize={{base: '1rem', lg: '1.2rem'}}
             borderRadius={'full'}
             bg={'rgba(97, 97, 97, 0.9)'}
-            border={'1px solid RGBA(0, 0, 0, 0.64)'}
+            border={'1px solid rgba(255, 255, 255, .1)'}
             p={2}
             _hover={{
               color: "#e31b60", 
@@ -84,7 +85,7 @@ const Contact = () => {
             fontSize={{base: '1rem', lg: '1.2rem'}}
             borderRadius={'full'}
             bg={'rgba(97, 97, 97, 0.9)'}
-            border={'1px solid RGBA(0, 0, 0, 0.64)'}
+            border={'1px solid rgba(255, 255, 255, .1)'}
             p={2}
             _hover={{
               color: "#e31b60", 
@@ -100,7 +101,7 @@ const Contact = () => {
             fontSize={{base: '1rem', lg: '1.2rem'}}
             borderRadius={'full'}
             bg={'rgba(97, 97, 97, 0.9)'}
-            border={'1px solid RGBA(0, 0, 0, 0.64)'}
+            border={'1px solid rgba(255, 255, 255, .1)'}
             p={2}
             _hover={{
               color: "#e31b60", 
@@ -116,7 +117,7 @@ const Contact = () => {
             fontSize={{base: '1rem', lg: '1.2rem'}}
             borderRadius={'full'}
             bg={'rgba(97, 97, 97, 0.9)'}
-            border={'1px solid RGBA(0, 0, 0, 0.64)'}
+            border={'1px solid rgba(255, 255, 255, .1)'}
             p={2}
             _hover={{
               color: "#e31b60", 
@@ -135,11 +136,11 @@ const Contact = () => {
           mt={{base:5}}
         >
           <VStack  alignItems={'center'} justifyContent={'center'} gap={6}>
-              <Input type="text" value={name} onChange={(e) => setName(e.target.value)} borderRadius={'none'} borderBottom={'2px solid #000'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}  placeholder="Your Name" _placeholder={{ color: '#000' }}/>
+              <Input type="text" value={name} onChange={(e) => setName(e.target.value)} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}  placeholder="Your Name" _placeholder={{ color: '#b9b9b9' }}/>
 
-              <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email" _placeholder={{ color: '#000' }} borderRadius={'none'} borderBottom={'2px solid #000'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
+              <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Your Email" _placeholder={{ color: '#b9b9b9' }} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
 
-              <Textarea mt={4} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} _placeholder={{ color: '#000' }} borderRadius={'none'} borderBottom={'2px solid #000'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
+              <Textarea mt={4} placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} _placeholder={{ color: '#b9b9b9' }} borderRadius={'none'} borderBottom={'2px solid #fff'} borderTop={'none'} borderRight={'none'} borderLeft={'none'}/>
 
             <Button
               mt={4}
@@ -147,7 +148,7 @@ const Contact = () => {
               color={'#000'}
               borderRadius={6}
               _hover={{ bg: "#e31b60", color: 'white', border: "2px solid #000", transition: "all .5s ease", }}
-              border={'2px solid #000'}
+              border={'2px solid rgba(255, 255, 255, .1)'}
               px={'1.6rem'}
               py={'1.2rem'}
               type="submit"
