@@ -16,7 +16,7 @@ const About = () => {
 
   return (
     <Box  
-      bgColor={"#000"} id="about" minH={'full'} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:20, lg: 24}}
+      id="about" minH={'100vh'} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:20, lg: 24}}
     >
       <Headers left={'about'} right={'me'} />
       <AnimatedGrid

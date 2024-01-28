@@ -11,6 +11,8 @@ const Hero = () => {
       id="hero"
       position={'relative'}
       as={'section'}
+      minH={'100vh'}
+      w={'full'}
     >
       <Box position={'absolute'} zIndex={2} bottom={0}>
         <Image 
@@ -20,7 +22,7 @@ const Hero = () => {
           objectFit={{base: 'cover', md: 'fill'}}
         />
       </Box>
-      <Background />
+      {/* <Background /> */}
       <AnimatePresence>
         <Box
            position="absolute" gap={0} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'}  alignItems={'center'}

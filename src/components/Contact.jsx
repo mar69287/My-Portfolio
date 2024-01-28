@@ -44,7 +44,8 @@ const Contact = () => {
         as="section"
         pt={{base:20, lg: 24}}
         position={'relative'}
-        minH={'100vh'} bg={'#000'}
+        minH={'100vh'} 
+        // bg={'#000'}
     >
         <Headers left={'contact'} right={'me'} />
         <VStack

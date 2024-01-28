@@ -8,8 +8,9 @@ const SplashPage = () => {
         <Box
             position={'relative'}
             color={'#fff'}
+            w={'100vw'} h={'100vh'}
         >
-            <Background />
+            {/* <Background /> */}
             <Box
                 position="absolute" gap={2} zIndex={3} bottom={0} top={0} right={0} left={0} m={'auto'} alignItems={'center'} justifyContent={'center'} display={'flex'} flexDirection={'column'}
                 h={'max-content'} w={'max-content'}

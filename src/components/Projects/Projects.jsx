@@ -16,10 +16,11 @@ const Projects = () => {
   return (
     <Box
       minH="100vh"
-      bgColor={"#000"}
+      // bgColor={"#000"}
       py={{base:20, lg: 24}}
       id="projects"
       as="section"
+      pos={'relative'} zIndex={1}
     >
       <Headers left={'select'} right={'work'} />
       <Box
