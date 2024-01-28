@@ -8,10 +8,12 @@ import Contact from './components/Contact'
 import { useEffect, useState } from "react";
 import SplashPage from './components/SplashPage'
 import { AnimatePresence } from 'framer-motion'
+import Background from './components/Background'
 
 function App() {
   const [selected, setSelected] = useState(0); 
   const [showSplash, setShowSplash] = useState(true)
+  const [mode, setMode] = useState(true)
 
   useEffect(() => {
     const changeStatus = () => {
@@ -23,14 +25,15 @@ function App() {
   }, []);
 
   return (
-    <Box className='container' h={'100vh'}>
+    <Box className='container' minH={'100vh'} w={'full'} pos={'relative'}>
+      <Background selected={selected === 0}  />
       {showSplash ? (
           <SplashPage />
       ) : (
         <>
-          <Navbar setSelected={setSelected} selected={selected}/>
+          <Navbar setSelected={setSelected} selected={selected} mode={mode} setMode={setMode} />
 
-          <AnimatePresence>{Sections[selected].Feature}</AnimatePresence>
+          {mode && <AnimatePresence>{Sections[selected].Feature}</AnimatePresence>}
         </>
       )}
       
