@@ -1,7 +1,6 @@
 import { HStack, Box, Flex } from '@chakra-ui/react';
 import './Navbar.css';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
 
 const Navbar = ({ setSelected, selected, mode, setMode }) => {
   const sectionNames = ['Home', 'About', 'Projects', 'Contact'];
