@@ -18,7 +18,7 @@ const Projects = () => {
       minH="100vh"
       // bgColor={"#000"}
       py={{base:20, lg: 24}}
-      id="projects"
+      id="Projects"
       as="section"
       pos={'relative'} zIndex={1}
     >

@@ -40,7 +40,7 @@ const Contact = () => {
  
   return (
     <Box
-        id="contact"
+        id="Contact"
         as="section"
         pt={{base:20, lg: 24}}
         position={'relative'}
