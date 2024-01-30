@@ -1,10 +1,5 @@
-.active {
-    color: #e31b6d !important;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
 .nav-icons {
-    color: #fff;
+    /* color: #fff; */
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 50%;
@@ -13,10 +8,15 @@
 .nav-icons:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.4);
-    color: #e31b6d;
+    /* color: #e31b6d; */
 }
 
 nav {
     backdrop-filter: blur(15px);
-    /* box-shadow: 0 0 10px 5px rgba(4, 194, 201, 0.5) */
 }
+
+.active {
+    background: none;
+    color: #fff;
+}
+
