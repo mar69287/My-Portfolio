@@ -18,7 +18,7 @@ const Headers = ({ left, right, subtitles }) => {
                 <Heading
                     as={motion.div}
                     fontSize={{base: '13vw', sm: '8vw', md: '7.5vw', xl: '7vw', '2xl': '6.5vw' }}
-                    fontWeight={'thin'} textTransform={'uppercase'}
+                    textTransform={'uppercase'}
                     variants={{
                         hidden: {
                             opacity: 0, x: -20
@@ -40,7 +40,7 @@ const Headers = ({ left, right, subtitles }) => {
                 <Heading
                     as={motion.div}
                     fontSize={{base: '13vw', sm: '8.5vw', md: '8vw', xl: '8vw', '2xl': '6.5vw' }}
-                    fontWeight={'bold'} textTransform={'uppercase'}
+                    textTransform={'uppercase'} fontStyle={'italic'}
                     variants={{
                         hidden: {
                             opacity: 0, x: 20

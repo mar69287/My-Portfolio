@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Heading, Img, Stack, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, Heading, Img, Stack, VStack } from '@chakra-ui/react';
 import "./hero.css"
 import Background from './Background';
 import astronaut from '../assets/astronaut.png'
@@ -19,46 +19,47 @@ const Hero = () => {
       <Background />
       <VStack
         position={'relative'} zIndex={5} justifyContent={'center'}
-        color={'#fff'} minH={'100vh'} width={{base: '100%'}} p={{base: 4,lg: 10, 'xl': 16}} textTransform={'uppercase'} letterSpacing={1.1} 
+        color={'#fff'} minH={'100vh'} width={{base: '100%'}} p={{base: 4,lg: 10, 'xl': 16}} textTransform={'uppercase'} letterSpacing={1.1}
+        fontFamily={'League Spartan, sans-serif'}
       >
         <Heading
-          textAlign={'left'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.95} fontWeight={'regular'}
+          textAlign={'left'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.8}
         >
           Software
         </Heading>
         <Heading
-          textAlign={'right'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.95} fontWeight={'regular'}
-          pr={{sm: 9, md: 16, lg: 24, 'xl': 32, '2xl': 60}}
+          textAlign={'right'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.8}
+          pr={{sm: 9, md: 16, lg: 24, 'xl': 32, '2xl': 60}} 
         >
           Engineer &
         </Heading>
         <Heading
-          textAlign={'left'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.95} fontWeight={'regular'}
-          pl={{sm: 9, md: 16, lg: 24, 'xl': 32, '2xl': 60}}
+          textAlign={'left'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.8}
+          pl={{sm: 9, md: 16, lg: 24, 'xl': 32, '2xl': 60}} 
         >
           Full-Stack
         </Heading>
         <HStack
-          textAlign={'right'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.95} fontWeight={'regular'}
+          textAlign={'right'} w={'full'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.8} 
           justify={'end'} color={'white'} gap={0}
         >
           <Heading
-            textAlign={'right'} w={'max-content'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.95} fontWeight={'regular'}
+            textAlign={'right'} w={'max-content'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.8} 
             
           >
             Develope
           </Heading>
           <Box
-            textAlign={'right'} w={'max-content'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.95} fontWeight={'regular'}
-            pos={'relative'} fontFamily={'Roboto,sans-serif;'} display={'flex'} justifyContent={'center'}
+            textAlign={'right'} w={'max-content'} fontSize={{base: '13vw', sm: '10vw', md: '9vw', lg: '8.75vw'}} lineHeight={.8} 
+            pos={'relative'}  display={'flex'} justifyContent={'center'} 
           >
             R
             <Flex
-              pos={'absolute'} right={0} left={0} mx={'auto'} top={{base: '-1.1rem', md: '-1.7rem', lg: '-2.1rem', 'xl': '-2.6rem', '2xl': -8}} zIndex={6} w={'max-content'}
+              pos={'absolute'} right={0} left={{base: '-.4rem', lg: '-.9rem', '2xl': '-.8rem'}} mx={'auto'} top={{base: '-1.4rem', sm: '-1.63rem', md: '-1.9rem', lg: '-2.4rem', 'xl': '-3rem', '2xl': '-3.5rem'}} zIndex={6} w={'max-content'}
             >
               <Img 
                 src={astronaut}
-                boxSize={{base:'25px', sm: '30px', md: '40px', lg: '50px', 'xl':'60px'}}
+                boxSize={{base:'25px', sm: '28px', md: '33px', lg: '40px', 'xl':'60px'}}
               />
             </Flex>
           </Box>
@@ -84,6 +85,7 @@ const AnimatedHeader = () => {
     <Stack gap={0} fontSize={{base: '17px', md: 'xl', '2xl': '4xl'}} color={'#999999'}>
       <HStack 
         alignItems={'center'} 
+        fontFamily={'Libre Baskerville, serif'}
       >
         <BsArrowReturnRight style={{color: '#fff'}}/>
          <motion.span 
@@ -96,7 +98,7 @@ const AnimatedHeader = () => {
           </motion.span>
         ))}</motion.span>
       </HStack>
-      <HStack alignItems={'center'}>
+      <HStack alignItems={'center'} fontFamily={'Libre Baskerville, serif'}>
         <motion.span
           // initial={'hidden'} animate={'visible'} transition={{staggerChildren: .1}} 
           >{text2.split('').map((char, index) => (

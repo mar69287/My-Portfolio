@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { ChakraProvider,  extendTheme } from '@chakra-ui/react'
+import "@fontsource/league-spartan"
+import "@fontsource/libre-baskerville";
 
 const theme = extendTheme({
   fonts: {
-    body: "PT Serif, serif",
-    heading: "Roboto, sans-serif",
+    body: "Libre Baskerville, serif",
+    heading: "League Spartan, sans-serif",
+    // heading: "Roboto, sans-serif",
   },
 });
 
