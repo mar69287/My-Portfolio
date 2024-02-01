@@ -1,7 +1,9 @@
-import { Box, Flex, HStack, Heading, Img, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, Heading, Img, Stack, Text, VStack } from '@chakra-ui/react';
 import "./hero.css"
 import Background from './Background';
 import astronaut from '../assets/astronaut.png'
+import { BsArrowReturnRight } from "react-icons/bs";
+import { motion } from 'framer-motion'
 
 const Hero = () => {
 
@@ -11,8 +13,8 @@ const Hero = () => {
       position={'relative'}
       as={'section'}
       minH={'100vh'}
-      w={'full'} pt
-      display={'flex'} justifyContent={'center'} alignItems={'center'}
+      w={'full'} 
+      display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}
     >
       <Background />
       <VStack
@@ -52,7 +54,7 @@ const Hero = () => {
           >
             R
             <Flex
-              pos={'absolute'} right={0} left={0} mx={'auto'} top={{base: '-1.2rem', md: '-1.7rem', lg: '-2.1rem', 'xl': '-2.6rem', '2xl': -8}} zIndex={6} w={'max-content'}
+              pos={'absolute'} right={0} left={0} mx={'auto'} top={{base: '-1.1rem', md: '-1.7rem', lg: '-2.1rem', 'xl': '-2.6rem', '2xl': -8}} zIndex={6} w={'max-content'}
             >
               <Img 
                 src={astronaut}
@@ -62,9 +64,72 @@ const Hero = () => {
           </Box>
         
         </HStack>
+        <Flex
+          w={'full'} zIndex={5} color={'white'} fontSize={'xl'} justifyContent={'start'} pl={{base: 4,lg: 10, 'xl': 16}}
+          pos={'absolute'} bottom={{base: 5, md: 10}} left={0} textTransform={'lowercase'}
+        >
+          <AnimatedHeader text={'focusing on solving complex problems with simple solutions'} />
+        </Flex>
       </VStack>
     </Box>
   );
 };
 
+const AnimatedHeader = () => {
+  const text1 = 'focusing on solving complex'
+  const text2 = 'problems with'
+  const text3 = 'simple solutions'
+  return (
+    
+    <Stack gap={0} fontSize={{base: '17px', md: 'xl', '2xl': '4xl'}} color={'#999999'}>
+      <HStack 
+        alignItems={'center'} 
+      >
+        <BsArrowReturnRight style={{color: '#fff'}}/>
+         <motion.span 
+          // initial={'hidden'} animate={'visible'} transition={{staggerChildren: .05}}
+         >{text1.split('').map((char, index) => (
+          <motion.span key={index}
+            // variants={letterAnimations}
+          >
+            {char}
+          </motion.span>
+        ))}</motion.span>
+      </HStack>
+      <HStack alignItems={'center'}>
+        <motion.span
+          // initial={'hidden'} animate={'visible'} transition={{staggerChildren: .1}} 
+          >{text2.split('').map((char, index) => (
+            <motion.span key={index}
+              // variants={letterAnimations}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+        <motion.span
+          // initial={'hidden'} animate={'visible'} transition={{staggerChildren: .1}} 
+          style={{color: '#fff'}}
+          >{text3.split('').map((char, index) => (
+            <motion.span key={index}
+              // variants={letterAnimations}
+            >
+              {char}
+            </motion.span>
+          ))}
+        </motion.span>
+      </HStack>
+    </Stack>
+  )
+}
+
 export default Hero;
+
+const letterAnimations = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1
+  },
+}

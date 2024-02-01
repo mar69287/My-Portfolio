@@ -4,7 +4,6 @@ import { AiOutlineMail, AiOutlineDownload } from 'react-icons/ai'
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import resume from '../assets/Marco-Software-Resume.pdf'
-import { MdArrowForward } from 'react-icons/md';
 import { motion } from 'framer-motion'
 import Headers from "./Headers";
 import Skills from "./Skills";
@@ -16,9 +15,9 @@ const About = () => {
 
   return (
     <Box  
-      id="About" minH={'100vh'} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:20, lg: 24}}
+      id="About" minH={'100vh'} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:10, lg: 24}}
     >
-      <Headers left={'about'} right={'me'} />
+      <Headers left={'about'} right={'me'} subtitles={['collaborative', 'detail-oriented', 'problem solver']} />
       <AnimatedGrid
         templateColumns={{ base: "1fr", md: '1fr 1fr', lg: "repeat(6, 1fr)" }} 
         gap={0} 
@@ -152,13 +151,13 @@ const About = () => {
                 <Text color={'#fff'} fontSize={"xl"} fontWeight={'medium'} textTransform={'uppercase'}>
                   My Background
                 </Text>
-                <Text color={'#b9b9b9'} fontSize={"xl"} mt={1}>
+                <Text color={'#999999'} fontSize={"xl"} mt={1}>
                   I am a first-generation college graduate with a degree in <span style={{color: '#fff'}}>Mechanical Engineering</span>. My academic journey sparked an interest in coding, prompting me to direct my determination towards
                   a career in <span style={{color: '#fff'}}>web development</span>. I&apos;ve since explored a diverse tech stack and successfully applied it in creating projects that I take great pride in. Through this journey, I&apos;ve demonstrated 
                   the ability to <span style={{color: '#fff'}}>swiftly acquire</span> and <span style={{color: '#fff'}}>apply new skills</span>, which has instilled in me a sense of accomplishment and a thirst for <span style={{color: '#fff'}}>continuous learning</span>. Therefore, I&apos;m eager to keep growing and contribute
                   to more fulfilling projects whose <span style={{color: '#fff'}}>solutions make a lasting impact</span>. 
                 </Text>
-                <Text color={'#b9b9b9'} fontSize={"xl"} mt={1}>
+                <Text color={'#999999'} fontSize={"xl"} mt={1}>
                   Aside from programming, I love the outdoors–from camping in Sequoia or snowboarding in Big Bear with friends to taking a drive with my beautiful dog. When I’m not outside, I’m watching my favorite sports 
                   team FC Barcelona. Visca Barca!
                 </Text>
@@ -199,20 +198,20 @@ const About = () => {
           <VStack justifyContent={'start'} alignItems={'start'}>
             <HStack w={'full'} alignItems={'start'}>
               <Box w={'7rem'}>
-                <Text color={'#b9b9b9'}>2023</Text>
+                <Text color={'#999999'}>2023</Text>
               </Box>
               <Box w={'full'} gap={0}>
                 <Text >Software Engineering</Text>
-                <Text lineHeight={.7} color={'#b9b9b9'}>General Assembly</Text>
+                <Text lineHeight={.7} color={'#999999'}>General Assembly</Text>
               </Box>
             </HStack>
             <HStack w={'full'} alignItems={'start'}>
               <Box w={'7rem'}>
-                <Text color={'#b9b9b9'}>2022</Text>
+                <Text color={'#999999'}>2022</Text>
               </Box>
               <Box w={'full'}>
                 <Text>B.S. Mechanical Engineering</Text>
-                <Text lineHeight={.7} color={'#b9b9b9'}>CSUN</Text>
+                <Text lineHeight={.7} color={'#999999'}>CSUN</Text>
               </Box>
             </HStack>
           </VStack>

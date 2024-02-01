@@ -42,10 +42,9 @@ const Contact = () => {
     <Box
         id="Contact"
         as="section"
-        pt={{base:20, lg: 24}}
+        pt={{base:10, lg: 24}}
         position={'relative'}
         minH={'100vh'} 
-        // bg={'#000'}
     >
         <Headers left={'contact'} right={'me'} />
         <VStack
@@ -58,10 +57,10 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
           color={'#fff'}
         >
-          <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
+          <Text fontSize={{base: 'md', lg: 'xl'}} lineHeight={1.5} textAlign={'center'}>
             Want to work together or just say hi? <br /> Locating me is a breeze!
           </Text>
-          <Box w={{base: '60%', sm: '40%', '2xl': '30%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
+          <Box w={{base: '60%', sm: '40%', '2xl': '30%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} mt={6} mb={10}/>
           <HStack justifyContent={'center'} alignItems={'center'} gap={{base: 7}}>
             <Link
               href="https://github.com/mar69287"

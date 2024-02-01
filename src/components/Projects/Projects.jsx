@@ -18,11 +18,12 @@ const Projects = () => {
       minH="100vh"
       // bgColor={"#000"}
       py={{base:20, lg: 24}}
+      pt={{lg: 32}}
       id="Projects"
       as="section"
       pos={'relative'} zIndex={1}
     >
-      <Headers left={'select'} right={'work'} />
+      <Headers left={'select'} right={'work'} subtitles={['user-friendly', 'interactive', 'scalable']} />
       <Box
         as={motion.div}
         initial={{ opacity: 0, y: 20 }}
@@ -32,17 +33,17 @@ const Projects = () => {
           alignItems={'center'}
           px={2}
           pb={5}
-          pt={{base: 5, lg: 0}}
+          pt={{base: 2, lg: 0}}
         >
-          <Text fontSize={{base: 'lg', lg: 'xl'}} lineHeight={1.5} textAlign={'center'} color={'#fff'}>
+          <Text fontSize={{base: 'md', lg: 'xl'}} lineHeight={1.5} textAlign={'center'} color={'#fff'}>
             Building projects involves hands-on learning, rigorous testing, and bringing concepts to life through practical construction.
           </Text>
-          <Box w={{base: '60%', sm: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} my={6}/>
+          <Box w={{base: '60%', sm: '40%'}} bgGradient='linear(to-r, black, #e31b60, #04c2c9, #e31b60, black)' h={'1px'} mt={6} mb={10}/>
         </VStack>
         <Grid
            width={{base: '100%', '2xl': '1400px'}} m='0 auto'
            templateColumns={{ base: "1fr", md: "1fr 1fr"}}
-           gap={{base: 5, md: 3}}
+           gap={{base: 10, md: 3}}
            px={2}
         >
           <Card
@@ -63,7 +64,7 @@ const Projects = () => {
           />
           <Card
             title="BARK Rescue"
-            description="Directed a cross functional team of five developers to redesign a Non-profit website"
+            description="Hackathon event: Directed a team of the developers as we communicated with the UI/UX team to redesign a Non-Profit website."
             tools={['Vite', 'Node.js', 'React', 'Tailwind' ]}
             imgSrc={bark}
             github={'https://github.com/jadewang425/winter-hackathon-23'}
@@ -131,7 +132,7 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
               Still in Progress<FaExclamation/>
             </Box>
           }
-          <Link isExternal href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
+          <Link isExternal w={'max-content'} href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
               <HStack mt={0} className='btn' w={'max-content'} >
                   <Text fontSize={{base: 'md', md: 'lg'}}  fontWeight={'semibold'} >
                       More Details
