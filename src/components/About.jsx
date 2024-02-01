@@ -15,7 +15,7 @@ const About = () => {
 
   return (
     <Box  
-      id="About" minH={'100vh'} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:10, lg: 24}}
+      id="About" minH={{base: '100vh'}} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:10, lg: 28}}
     >
       <Headers left={'about'} right={'me'} subtitles={['collaborative', 'detail-oriented', 'problem solver']} />
       <AnimatedGrid
@@ -23,7 +23,7 @@ const About = () => {
         gap={0} 
         borderTop={{base: 'none', md: '2px solid #ddd'}}
         mx={{base: 0, lg: 0}}
-        mb={20}
+        mb={{base: 20, lg: 0}}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, transition: {delay: .7} }}
         width={{xl: '100%', '2xl': '1400px'}}

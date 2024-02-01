@@ -16,7 +16,7 @@ const Projects = () => {
   return (
     <Box
       minH="100vh"
-      // bgColor={"#000"}
+      mt={{base: 16, lg: 0}}
       py={{base:20, lg: 24}}
       pt={{lg: 32}}
       id="Projects"
