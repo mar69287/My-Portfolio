@@ -10,7 +10,6 @@ const theme = extendTheme({
   fonts: {
     body: "Libre Baskerville, serif",
     heading: "League Spartan, sans-serif",
-    // heading: "Roboto, sans-serif",
   },
 });
 
