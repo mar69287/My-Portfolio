@@ -15,7 +15,7 @@ const About = () => {
 
   return (
     <Box  
-      id="About" minH={{base: '100vh'}} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} pt={{base:10, lg: 28}}
+      id="About" minH={{base: '100vh'}} pos={'relative'} zIndex={1} display={'flex'} flexDirection={'column'} justifyContent={'start'} alignItems={'center'} py={{base:20, lg: 24}}
     >
       <Headers left={'about'} right={'me'} subtitles={['collaborative', 'detail-oriented', 'problem solver']} />
       <AnimatedGrid

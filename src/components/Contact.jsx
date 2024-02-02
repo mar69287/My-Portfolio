@@ -42,7 +42,7 @@ const Contact = () => {
     <Box
         id="Contact"
         as="section"
-        pt={{base:10, lg: 0}}
+        pt={{base:10, lg: 28}}
         position={'relative'}
         minH={'100vh'} 
     >

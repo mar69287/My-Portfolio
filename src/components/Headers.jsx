@@ -40,7 +40,7 @@ const Headers = ({ left, right, subtitles }) => {
                 <Heading
                     as={motion.div}
                     fontSize={{base: '13vw', sm: '8.5vw', md: '8vw', xl: '8vw', '2xl': '6.5vw' }}
-                    textTransform={'uppercase'} fontStyle={'italic'}
+                    textTransform={'uppercase'} fontStyle={'italic'} fontWeight={'500'}
                     variants={{
                         hidden: {
                             opacity: 0, x: 20
