@@ -57,11 +57,11 @@ const Hero = () => {
             >
               R
               <Flex
-                pos={'absolute'} right={0} left={{base: '-.4rem', lg: '-.9rem', '2xl': '-.8rem'}} mx={'auto'} top={{base: '-1.4rem', sm: '-1.63rem', md: '-1.9rem', lg: '-2.4rem', 'xl': '-3rem', '2xl': '-2.2rem',}} zIndex={6} w={'max-content'}
+                pos={'absolute'} right={0} left={{base: '-.4rem', lg: '-.9rem', '2xl': '-.8rem'}} mx={'auto'} top={{base: '-1.2rem', sm: '-1.3rem', md: '-1.5rem', lg: '-1.8rem', 'xl': '-2.2rem', '2xl': '-2.45rem'}} zIndex={6} w={'max-content'}
               >
                 <Img
                   src={astronaut}
-                  boxSize={{base:'25px', sm: '28px', md: '33px', lg: '40px', 'xl':'60px'}}
+                  boxSize={{base:'25px', sm: '28px', md: '33px', lg: '40px', 'xl':'50px', '2xl': '60px'}}
                 />
               </Flex>
             </Box>
