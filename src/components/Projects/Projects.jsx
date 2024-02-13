@@ -71,7 +71,7 @@ const Projects = () => {
             link={'https://barkanimalrescue.netlify.app/'}
           />
           <Card
-            title="Eventiva"
+            title="Eventiva (In Progress)"
             description="Say goodbye to long email threads and group texts. Eventiva is your one stop shop to plan a group event everyone will love."
             tools={['Vite', 'Python', 'React', 'Tailwind', 'AppWrite']}
             imgSrc={eventiva}
@@ -101,7 +101,7 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
             <Heading fontSize={{base: 'xl', md: '2xl', lg: '3xl'}} fontWeight={'semibold'}>{title}</Heading>
           ) : (
               <Link
-                fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: '#e31b60', transition: 'all 0.4s ease'}}
+                fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: '#9b59b6', transition: 'all 0.3s ease'}}
                 href={link}
                 target="_blank" rel="noopener noreferrer"
               >
@@ -124,15 +124,15 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
               </Box>
             ))}
           </Box>
-          {title === 'Eventiva' &&
+          {/* {title === 'Eventiva' &&
             <Box
               borderRadius={'full'} py={2} px={3} bg={'rgb(50,50,50)'} display={'flex'} alignItems={'center'} fontSize={{base: 'xs', md: 'sm'}}
               fontWeight={'bold'} w={'max-content'} mb={2} border={'1px solid rgba(255, 255, 255, .1)'}
             >
               Still in Progress<FaExclamation/>
             </Box>
-          }
-          <Link isExternal w={'max-content'} href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#e31b60', transition: 'color 0.3s ease' }}>
+          } */}
+          <Link isExternal w={'max-content'} href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#9b59b6', transition: 'color 0.3s ease' }}>
               <HStack mt={0} className='btn' w={'max-content'} >
                   <Text fontSize={{base: 'md', md: 'lg'}}  fontWeight={'semibold'} >
                       More Details
