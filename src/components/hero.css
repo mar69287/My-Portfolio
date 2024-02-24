@@ -4,5 +4,5 @@
 
 .button:hover .arrow-icon,
 .btn:hover .arrow-icon {
-    transform: translateX(2px);
+    transform: rotate(-45deg);
 }

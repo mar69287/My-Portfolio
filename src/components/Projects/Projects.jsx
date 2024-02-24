@@ -2,7 +2,7 @@ import { Box, Grid, HStack, Heading, Hide, Link, Show, Text, VStack } from "@cha
 import Headers from "../Headers";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import { FaExclamation } from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
 import dev from '../../assets/dev.png'
 import bark from '../../assets/bark.png'
 import tienda from '../../assets/tienda.png'
@@ -97,13 +97,14 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
           h={'full'} p={6} display={'flex'} flexDirection={'column'} justifyContent={'start'} bg={'rgb(10, 10, 10)'}
           fontSize={{base: 'xl', md: '2xl', lg: '3xl'}}
         >
-          {title === 'Eventiva' ? (
-            <Heading fontSize={{base: 'xl', md: '2xl', lg: '3xl'}} fontWeight={'semibold'}>{title}</Heading>
+          {title === 'Eventiva (In Progress)' ? (
+            <Heading fontSize={{base: 'xl', md: '2xl', lg: '3xl'}} fontWeight={'semibold'} fontFamily={'Libre Baskerville, serif'}>Eventiva</Heading>
           ) : (
               <Link
-                fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: '#9b59b6', transition: 'all 0.3s ease'}}
+                fontWeight={'semibold'} w={'max-content'} display={'flex'} alignItems={'center'} _hover={{color: '#7928CA', transition: 'all 0.3s ease'}}
                 href={link}
                 target="_blank" rel="noopener noreferrer"
+                fontSize={{base: 'xl', md: '2xl', lg: '3xl'}}
               >
                 {title} <FiArrowUpRight/>
               </Link>
@@ -124,22 +125,26 @@ const Card = ({ imgSrc, title, description, tools, github, link }) => {
               </Box>
             ))}
           </Box>
-          {/* {title === 'Eventiva' &&
-            <Box
-              borderRadius={'full'} py={2} px={3} bg={'rgb(50,50,50)'} display={'flex'} alignItems={'center'} fontSize={{base: 'xs', md: 'sm'}}
-              fontWeight={'bold'} w={'max-content'} mb={2} border={'1px solid rgba(255, 255, 255, .1)'}
-            >
-              Still in Progress<FaExclamation/>
-            </Box>
-          } */}
-          <Link isExternal w={'max-content'} href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', color: '#9b59b6', transition: 'color 0.3s ease' }}>
-              <HStack mt={0} className='btn' w={'max-content'} >
-                  <Text fontSize={{base: 'md', md: 'lg'}}  fontWeight={'semibold'} >
-                      More Details
-                  </Text>
-                  <MdArrowForward className="arrow-icon"/>
-              </HStack>
-          </Link>
+          <HStack gap={2} w={'full'}>
+            <Link isExternal bgGradient='linear(to-br, #FF0080, #7928CA, #FF0080)' p={'1.6px'} borderRadius={"full"} w={'max-content'}  href={github} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', bgGradient: 'linear(to-br, #7928CA, #FF0080, #7928CA)', transition: 'all 4s ease' }}>
+                <HStack  className='btn' w={'full'} bg={'black'} p={3} borderRadius={'full'} >
+                    <Text fontSize={{base: 'xs', md: 'sm'}}  fontWeight={'semibold'} >
+                        More Details
+                    </Text>
+                    <FiGithub />
+                </HStack>
+            </Link>
+            {title !== 'Eventiva (In Progress)' &&
+              <Link isExternal bgGradient='linear(to-br, #FF0080, #7928CA, #FF0080)' p={'1.6px'} borderRadius={"full"} w={'max-content'} href={link} fontSize={{base: 'md', md: 'lg'}}  color={'#fff'} _hover={{ textDecoration: 'none', bgGradient: 'linear(to-br, #7928CA, #FF0080, #7928CA)', transition: 'color 0.3s ease' }}>
+                  <HStack mt={0} className='btn' w={'full'} bg={'black'} p={3} borderRadius={'full'}>
+                      <Text fontSize={{base: 'xs', md: 'sm'}}  fontWeight={'semibold'} >
+                          Live
+                      </Text>
+                      <MdArrowForward className="arrow-icon"/>
+                  </HStack>
+              </Link>
+            }
+          </HStack>
         </Box>
         <Box
           as={motion.div}
